@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--为com.xero.entity.User设置别名 User 方便调用-->
+    <typeAliases>
+        <typeAlias alias="User" type="se.zust.entity.User"/>
+        <typeAlias alias="Library" type="se.zust.entity.Library"/>
+<!--         <typeAlias alias="Inlibrary" type="se.zust.entity.Inlibrary"/> -->
+        <typeAlias alias="Outlibrary" type="se.zust.entity.Outlibrary"/>  
+          
+    </typeAliases>
+    
+    
+    
+</configuration>
+        

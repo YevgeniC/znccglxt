@@ -1,0 +1,171 @@
+[INFO] [2017-12-18 16:47:18][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Dec 18 16:47:18 CST 2017]; root of context hierarchy
+  [INFO] [2017-12-18 16:47:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [config/applicationContext.xml]
+  [INFO] [2017-12-18 16:47:18][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-12-18 16:47:18][com.mchange.v2.log.MLog]MLog clients using log4j logging.
+  [INFO] [2017-12-18 16:47:18][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+  [WARN] [2017-12-18 16:47:18][com.mchange.v2.c3p0.management.ActiveManagementCoordinator]A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 412 ms
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'dispatcher': initialization started
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Dec 18 16:47:18 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-12-18 16:47:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [config/dispatcher-servlet.xml]
+  [INFO] [2017-12-18 16:47:18][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/inbase],methods=[GET]}" onto public java.lang.String se.zust.controller.InlibraryController.listall()
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/index],methods=[GET]}" onto public java.lang.String se.zust.controller.UserController.index()
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/账户开通],methods=[GET]}" onto public java.lang.String se.zust.controller.UserController.register()
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/doRegister],methods=[POST]}" onto public java.lang.String se.zust.controller.UserController.doregister(se.zust.entity.User,java.lang.String,javax.servlet.http.HttpServletRequest)
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/产品中心],methods=[GET]}" onto public java.lang.String se.zust.controller.UserController.production()
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/账户开通2],methods=[GET]}" onto public java.lang.String se.zust.controller.UserController.register2(se.zust.entity.User)
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/进入系统],methods=[GET]}" onto public java.lang.String se.zust.controller.UserController.login(se.zust.entity.User)
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/ssm/login],methods=[POST]}" onto public java.lang.String se.zust.controller.UserController.login(java.lang.String,java.lang.String,int,javax.servlet.http.HttpServletRequest)
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Dec 18 16:47:18 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Dec 18 16:47:18 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+  [INFO] [2017-12-18 16:47:18][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'dispatcher': initialization completed in 279 ms
+  [INFO] [2017-12-18 16:55:56][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2017-12-18 16:55:56][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4de8b406, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c756e4d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@48eff760, org.springframework.test.context.transaction.TransactionalTestExecutionListener@402f32ff, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@573f2bb1]
+  [INFO] [2017-12-18 16:55:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [ERROR] [2017-12-18 16:55:56][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd] to prepare test instance [test.testmybatis@2a17b7b6]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+[INFO] [2017-12-18 16:57:50][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2017-12-18 16:57:50][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4de8b406, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c756e4d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@48eff760, org.springframework.test.context.transaction.TransactionalTestExecutionListener@402f32ff, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@573f2bb1]
+  [INFO] [2017-12-18 16:57:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [ERROR] [2017-12-18 16:57:51][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd] to prepare test instance [test.testmybatis@2a17b7b6]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+[INFO] [2017-12-18 16:58:17][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+  [INFO] [2017-12-18 16:58:17][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4de8b406, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c756e4d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@48eff760, org.springframework.test.context.transaction.TransactionalTestExecutionListener@402f32ff, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@573f2bb1]
+  [INFO] [2017-12-18 16:58:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [config/applicationContext.xml]
+  [INFO] [2017-12-18 16:58:17][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@57baeedf: startup date [Mon Dec 18 16:58:17 CST 2017]; root of context hierarchy
+  [INFO] [2017-12-18 16:58:18][com.mchange.v2.log.MLog]MLog clients using log4j logging.
+  [INFO] [2017-12-18 16:58:18][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+  [ERROR] [2017-12-18 16:58:18][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c0e2abd] to prepare test instance [test.testmybatis@117159c0]
+  org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'test.testmybatis': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'userService' is expected to be of type 'se.zust.service.InlibraryService' but was actually of type 'se.zust.service.UserServiceImpl'
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:386)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'userService' is expected to be of type 'se.zust.service.InlibraryService' but was actually of type 'se.zust.service.UserServiceImpl'
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:378)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:522)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:627)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:169)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 26 more
+[INFO] [2017-12-18 16:58:18][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@57baeedf: startup date [Mon Dec 18 16:58:17 CST 2017]; root of context hierarchy
+  

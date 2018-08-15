@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        #body{
+            width: 700px;
+            height: 520px;
+            background-color: #FFF;
+        }
+        #top{
+        	height: 56px;
+        }
+        #top input{
+        	padding: 0;
+        	position: relative;
+        	top: 13px;
+        	left: 13px;
+        	width: 150px;
+        	height: 26px;
+        	color: rgb(153, 153, 153);
+        }
+        #select{
+            height: 26px;
+            position: relative;
+            top: 13px;
+            margin-left: 20px;
+        }
+        #refresh{
+            position: absolute;
+            top: 25px;
+            left: 270px;
+        }
+        #refresh:hover{
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        #button{
+        	width: 150px;
+        	height: 30px;
+        	float: right;
+        	position: relative;
+        	top: 13px;
+        	right: 13px;
+        	background-color: #28D5B7;
+        	border-radius: 70px;
+        	text-align: center;
+        	line-height: 30px;
+        	color: #FFF;
+        }
+        #button:hover{
+        	cursor: pointer;
+        }
+        #map{
+            height: 464px;
+            position: absolute;
+        }
+        #locate{
+            position: absolute;
+            top: 190px;
+            left: 360px;
+            z-index: 10;
+            opacity: 0;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="body">
+    	<div id="top">
+    		<input type="search" id="msg" value="货物信息" onfocus="javascript:if(this.value=='货物信息')this.value='';" onblur="javascript:if(this.value=='')this.value='货物信息';">
+            <select id="select">
+                <option value="0">所属区域</option>
+                <option value="1">货架编号</option>
+                <option value="2">物品类型</option>
+                <option value="3">物品编号</option>
+                <option value="4">定位卡号</option>
+                <option value="5">入库时间</option>
+            </select>
+            <div id="refresh" onclick="refresh()"><img src="../picture/进入系统/u252.png"></div>
+    		<div id="button" onclick="show()">定位</div>
+    	</div>
+    	<div id="map">
+            <img src="../picture/进入系统/u237.png">
+            <img src="../picture/进入系统/u240.png" id="locate">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var msg = document.getElementById('msg');
+        var loc = document.getElementById('locate');
+        function show() {
+            if (msg.value!='货物信息') {
+                loc.style.opacity='1';
+            }
+        }
+        function refresh(){
+            msg.value='';
+            loc.style.opacity='0';
+        }
+    </script>
+</body>
+</html>

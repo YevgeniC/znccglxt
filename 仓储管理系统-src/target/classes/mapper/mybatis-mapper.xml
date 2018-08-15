@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="se.zust.dao.UserDao">
+    <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
+    <resultMap id="userMap" type="se.zust.entity.User" >
+        <!-- 用id属性来映射主键字段 -->
+        <id property="id" column="id"/>
+        <!-- 用result属性来映射非主键字段 -->
+        <result property="username" column="username"/>
+        <result property="passsword" column="passsword"/>
+        <result property="realname" column="realname"/>
+        <result property="phonumber" column="phonumber"/>
+        <result property="type" column="type"/>
+        <result property="director" column="director"/>
+        <result property="userdescribe" column="userdescribe"/>
+    </resultMap>
+
+
+    <!-- 管理员注册 -->
+    <insert id="addUser" parameterType="se.zust.entity.User">
+        INSERT INTO user(username,password,realname,phonumber,type,director) VALUES 
+        (#{username},#{password},#{realname},#{phonumber},"0","null")
+    </insert>
+    
+    <!-- 根据用户名查询 （登录） -->
+    <select id="selectUserByName" resultMap="userMap" resultType="se.zust.entity.User">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+    
+    <!-- 根据direcot查询 （检索管理员名下的用户表）-->
+    <select id="selectUserByDirector" resultMap="userMap" resultType="se.zust.entity.User">
+        SELECT * FROM user WHERE director = #{director}
+    </select>
+    
+    <!-- 根据Id查询 -->
+    <select id="selectUserById" resultMap="userMap" resultType="se.zust.entity.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+    
+    <!-- 个人信息修改 -->
+    <update id="updateUser" keyProperty="id" parameterType="se.zust.entity.User">
+        update user set username=#{username},password=#{password},realname=#{realname},
+        phonumber=#{phonumber},type=#{type},director=#{director},userdescribe=#{userdescribe} 
+        where id=#{id} 
+    </update>
+    <!--,describe=#{describe} -->
+    
+    <!-- 普通用户添加 -->
+    <insert id="addNormalUser" keyProperty="id" parameterType="se.zust.entity.User">
+        INSERT INTO user(username,password,realname,phonumber,type,director) VALUES 
+        (#{username},#{password},#{realname},#{phonumber},#{type},#{director})
+    </insert>
+    
+    <!-- 普通用户删除 -->
+    <insert id="deleteNormalUser" parameterType="se.zust.entity.User">
+        DELETE FROM user WHERE id = #{id} 
+    </insert>
+    
+    
+    
+
+
+
+
+</mapper>

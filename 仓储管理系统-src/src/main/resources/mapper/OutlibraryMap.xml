@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="se.zust.dao.OutlibraryDao">
+         <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
+    	<resultMap id="outlibraryMap" type="se.zust.entity.Outlibrary" >
+        <id column="pid" property="pid"  />
+	    <result column="pnum" property="pnum"  />
+	    <result column="pname" property="pname"  />
+	    <result column="fisid" property="fisid" />
+	    <result column="secid" property="secid"  />
+	    <result column="thiid" property="thiid"  />
+	    <result column="outdate" property="outdate"  />
+    </resultMap>
+    <insert id="addOutlibrary" parameterType="se.zust.entity.Outlibrary">
+    	INSERT INTO outlibrary(pid,pnum,pname,fisid,secid,thiid,outdate) VALUES
+    	(#{pid},#{pnum},#{pname},#{fisid},#{secid},#{thiid},#{outdate})
+    	</insert>
+	<select id="selectAllOutlibrary" resultMap="outlibraryMap" resultType="se.zust.entity.Outlibrary">
+        SELECT * FROM outlibrary Order BY outdate DESC limit #{nowpage},7 
+    	</select>
+    	  <select id="selectAllOutlibraryCount" resultType="Integer">
+        SELECT IFNULL(COUNT(*),0) FROM outlibrary
+    </select>
+    
+        </mapper>
+        

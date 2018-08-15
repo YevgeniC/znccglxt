@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="se.zust.dao.BaseDao">
+         <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
+    <resultMap id="BaseResultMap" type="se.zust.entity.Base" >
+	    <result column="thiid" property="thiid"  />
+	    <result column="secid" property="secid"  />
+	    <result column="count" property="count" />
+    </resultMap>
+       
+    <select id="selectThiid"  resultType="String" parameterType="se.zust.entity.Base">
+        SELECT thiid FROM base GROUP BY thiid
+    </select>
+    <select id="selectSecid" resultType="String" parameterType="se.zust.entity.Base">
+        SELECT COUNT(secid)as'count' FROM base GROUP BY thiid
+    </select>
+ </mapper>

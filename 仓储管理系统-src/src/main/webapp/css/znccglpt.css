@@ -1,0 +1,105 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/*height: 768px;*/
+	height: 100%;
+	background-color: rgb(204,204,204);
+}
+a{
+    color: #FFF;
+    text-decoration: none;
+}
+#top{
+	width: 100%;
+	height: 65px;
+	background-color: #FFFFFF;
+	
+	vertical-align: middle;
+}
+#icon{
+	/*margin: 0;*/
+	width: 45px;
+	height: 45px;
+	float: left;
+	margin: 10px 10px 10px 25px;
+}
+#name{
+	width: 250px;
+	font-size: 20px;
+	margin-left: 10px;	
+	line-height: 65px;
+	float: left;
+}
+#head{
+	float: right;
+	width:40px;
+	height: 40px;
+	margin: 12.5px 25px 12.5px 10px;
+	cursor: pointer;
+}
+#LoginName{
+	float: right;
+	line-height: 65px;
+}
+#set{
+	position: absolute;
+	right: 0;
+	top: 65px;
+	z-index: 999;
+	width: 140px;
+	height: 135px;
+	box-shadow: -3px 3px 5px #888888;
+	display: none;
+}
+#set ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: #000;
+	text-align: center;	
+	background-color: #FFF;
+
+}
+#set ul li{
+	height: 45px;
+	line-height: 45px;
+}
+#set ul li:hover{
+	cursor: pointer;
+	background-color: #DEDEDE;
+}
+#left{
+	width: 19%;
+	height: 100%;
+	background-color: rgba(51, 68, 83, 1);
+	float: left;
+	color: #FFFFFF;
+}
+#menu{
+	padding: 0;
+    margin-top: 40px;
+    list-style: none;
+    text-align: center;
+}
+#menu li{
+	border-left: 3px solid transparent ;
+    height: 45px;
+    line-height: 40px;
+    margin-top: 10px;
+}
+#menu li:hover{
+    cursor: pointer;
+    border-left: 3px solid #7FFF00;
+    background-color: #526C85;
+}
+#right{
+	margin: 13px;
+    width: 79%;
+    height: 100%;
+    background-color: #FFFFFF;
+    float: left;
+}
+/*#right iframe{
+	height: 100%;
+}*/
