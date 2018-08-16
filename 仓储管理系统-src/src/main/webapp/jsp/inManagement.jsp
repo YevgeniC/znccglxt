@@ -5,8 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>inManagement</title>
-		<link href="css/inManagement.css" type="text/css" rel="stylesheet"/>
-		<script src="js/jquery-3.3.1.min.js"></script>
+		<link href="../css/inManagement.css" type="text/css" rel="stylesheet"/>
+		<script src="../js/jquery-3.3.1.min.js"></script>
 	</head>
 	<body>
 		<div id="top">
@@ -26,13 +26,14 @@
 					</tr>
 					<c:forEach var="inlibrary" items="${inlibrary}" varStatus="status">
 						<tr id="${status.index}">
-							<td><c:out value="${inlibrary.inUser}"></c:out></td>
+							<td><c:out value="${inlibrary.inuser}"></c:out></td>
 							<td><c:out value="${inlibrary.pname}"></c:out></td>
 							<td><c:out value="${inlibrary.pnum}"></c:out></td>
 							<td><c:out value="${inlibrary.area} - ${inlibrary.room}"></c:out></td>
-							<td><c:out value="${inlibrary.inTime}"></c:out></td>
-							<td><button id="detail" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #15D6BA">详情</button> |
-								<button id="delete" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #FF0000">删除</button>
+							<td><c:out value="${inlibrary.intime}"></c:out></td>
+							<td>
+								<button datafld="${inlibrary.pid}" class="detail" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #15D6BA">详情</button> |
+								<button datafld="${inlibrary.pid}" class="delete" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #FF0000">删除</button>
 							</td>
 						</tr>
 					</c:forEach>
@@ -49,50 +50,34 @@
 				<input type="submit" value="GO"/>
 			</div>
 		</div>
-		<form action="add" method="post" name="add">
+		<form method="POST" id="addInlibrary">
 		<div id="addDetail">
-			货物名称：<input  id="GoodsName" type="text" /><br/><br/>
-			货物数量：<input  id="GoodsCount" type="text" /><br/><br/>
+			货物名称：<input  id="GoodsName" name="GoodsName" type="text"/><br/><br/>
+			货物数量：<input  id="GoodsCount" name="GoodsCount" type="number" value="1" min="1"/><br/><br/>
 			存放位置：
-			<select id="area">
+			<select id="area" name="area">
 				<option>A1</option>
 				<option>A2</option>
 				<option>A3</option>
 			</select>
-			<select id="room">
+			<select id="room" name="room">
 				<option>101</option>
 				<option>102</option>
 				<option>103</option>
 			</select>
-			<div>
+			<div id="operation">
 				<div id="save">保存</div>
 				<div id="cancel">取消</div>
 			</div>
 		</div>
 		</form>
+		<div id="isDelete">
+			<div style="text-align: center;">是否删除该记录？</div>
+			<div>
+				<div id="yes">是</div>
+				<div id="no">否</div>
+			</div>
+		</div>
 	</body>
-<script type="text/javascript">
-	var isShow = 0;
-	$("#add").click(function(){
-		if (0 == isShow) {
-			$("#addDetail").show();
-			isShow = 1;		
-		}else if (1 == isShow) {
-			$("#addDetail").hide();
-			isShow = 0
-		}
-	});
-	$("#save").click(function(){
-		$("#addDetail").hide();
-		isShow = 0
-	});
-	$("#cancel").click(function(){
-		$("#addDetail").hide();
-		$("#GoodsName").val("");
-		$("#GoodsCount").val("");
-		$("#area:first option:first").attr("selected",true).siblings("option").attr("selected",false);		//重置select的值
-		$("#room:first option:first").attr("selected",true).siblings("option").attr("selected",false);
-		isShow = 0
-	});
-</script>
+	<script src="../js/util/inManagement.js"></script>
 </html>

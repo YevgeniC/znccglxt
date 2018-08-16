@@ -9,7 +9,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,42 +34,59 @@ public class InlibraryController {
 	private InlibraryService inlibraryservice;
 	@Autowired
 	private LibraryService LibraryService;
-	@RequestMapping(value="/inManagement",method=RequestMethod.GET)
-	public String inManagement(HttpServletRequest request){
-		int index = 1;
-		List<Inlibrary> Inlibrary=inlibraryservice.selectAllInlibrary(index);
-		for (Inlibrary inlibrary: Inlibrary){
-			String[] time = inlibrary.getIntime().split("\\.");
-			inlibrary.setIntime(time[0]);
+	@RequestMapping(value="/inManagement",method=RequestMethod.POST)
+	public String inManagement(HttpServletRequest request,@RequestParam(value = "search",required = false) String search){
+        List<Inlibrary> inlibrary = null;
+	    int index = 1;
+	    int a = 0;
+		if ("" == search || null == search){
+            inlibrary = inlibraryservice.selectAllInlibrary(index);
+        }else {
+            inlibrary = inlibraryservice.selectByName(search);
+        }
+		for (Inlibrary inlib: inlibrary){
+			String[] time = inlib.getIntime().split("\\.");
+            inlib.setIntime(time[0]);
 		}
 		int count = inlibraryservice.selectAllInlibraryCount();
-		request.setAttribute("inlibrary",Inlibrary);
+		request.setAttribute("inlibrary",inlibrary);
 		request.setAttribute("count",count);
 		return "inManagement";
 	}
-	@RequestMapping(value = "/add",method = RequestMethod.POST)
-	public void add(@RequestParam(value = "goodsName",required = false) String goodsName,@RequestParam(value = "goodsNum",required = false) Integer goodsNum,
-					@RequestParam(value = "area",required = false) String area,@RequestParam(value = "room",required = false) String room,
-					@RequestParam(value = "inUser",required = false) String inUser){
-		Inlibrary inlibrary = new Inlibrary();
+
+    @RequestMapping(value = "/addInlibrary",method = RequestMethod.POST)
+    public ResponseEntity<Inlibrary> addInlibrary(@RequestParam(value = "goodsName",required = false) String goodsName, @RequestParam(value = "goodsNum",required = false) Integer goodsNum,
+                                          @RequestParam(value = "area",required = false) String area, @RequestParam(value = "room",required = false) String room,
+                                          @RequestParam(value = "inUser",required = false) String inUser) {
+        Inlibrary inlibrary = new Inlibrary();
 		inlibrary.setPname(goodsName);
-		if (goodsNum == null){
-			goodsNum = 0;
-		}
 		inlibrary.setPnum(goodsNum);
 		inlibrary.setArea(area);
 		inlibrary.setRoom(room);
 		inlibrary.setInuser(inUser);
-		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-		inlibrary.setIntime(sdf.format(date));
-		inlibraryservice.addInlibrary(inlibrary);
-	}
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+        inlibrary.setIntime(sdf.format(date));
+        inlibraryservice.addInlibrary(inlibrary);
+        return new ResponseEntity<Inlibrary>(HttpStatus.OK);
+    }
 
+    @RequestMapping(value="/delete",method=RequestMethod.POST)
+    public ResponseEntity<Inlibrary> delete(@RequestParam(value = "pid",required = true) int pid){
+	    inlibraryservice.deleteInlibrary(pid);
+	    return new ResponseEntity<Inlibrary>(HttpStatus.OK);
+    }
+
+//    @RequestMapping(value="/selectByName",method=RequestMethod.POST)
+//    public ResponseEntity<Inlibrary> selectByName(@RequestParam(value = "username",required = false) String username){
+//	    inlibraryservice.selectByName(username);
+//	    return new ResponseEntity<Inlibrary>(HttpStatus.OK);
+//    }
 	@RequestMapping(value="/inerror",method=RequestMethod.GET)
  	 public String error(){
 		return "inerror";
 	}
+
 	@RequestMapping(value="/inbase1",method=RequestMethod.GET)
 	 public String test(String page,HttpServletRequest request){
 		int count = inlibraryservice.selectAllInlibraryCount();
@@ -92,7 +114,8 @@ public class InlibraryController {
 		request.setAttribute("page", page);
 		return "inbase1";
 	}
-	@RequestMapping(value = "/addInlibrary", method = RequestMethod.POST)
+
+//	@RequestMapping(value = "/addInlibrary", method = RequestMethod.POST)
     public void addlibrary(@RequestParam String fisid,ModelMap map,HttpServletRequest req,HttpServletResponse response) throws UnsupportedEncodingException{
 	  Date date = new Date();
 	  req.setCharacterEncoding("utf8");
@@ -263,7 +286,7 @@ public class InlibraryController {
 //		request.setAttribute("Library", Library);
 		return "sum";
 	}
-	@RequestMapping(value="/delete",method=RequestMethod.POST)
+//	@RequestMapping(value="/delete",method=RequestMethod.POST)
 	public void dellibrary(@RequestParam Integer pid,ModelMap map,HttpServletRequest req,HttpServletResponse response) throws IOException{
 		//req.setAttribute("error", 0);
 		LibraryService.delLibrary(pid);

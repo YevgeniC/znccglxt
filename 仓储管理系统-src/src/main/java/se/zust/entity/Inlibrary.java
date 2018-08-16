@@ -1,6 +1,5 @@
 package se.zust.entity;
 
-import java.util.Date;
 public class Inlibrary {
 	private  int pid;
 	private String pname;

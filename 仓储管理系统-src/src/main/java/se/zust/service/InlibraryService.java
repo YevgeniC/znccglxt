@@ -10,10 +10,11 @@ public interface InlibraryService {
 
 	void addInlibrary(Inlibrary inlibrary);
 
-	List<Inlibrary> selectByName(String name);
+	List<Inlibrary> selectByName(String inuser);
 
 	List<Inlibrary> selectAllInlibrary(int nowpage);
 
 	int selectAllInlibraryCount();
 
+	void deleteInlibrary(int pid);
 }

@@ -5,25 +5,30 @@
 	<!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
 	<resultMap id="inlibraryMap" type="se.zust.entity.Inlibrary" >
 		<id column="pid" property="pid"  />
-		<result column="pnum" property="pnum"  />
-		<result column="pname" property="pname"  />
-		<result column="area" property="area" />
-		<result column="room" property="room"  />
+		<result column="pnum" property="pnum"/>
+		<result column="pname" property="pname"/>
+		<result column="area" property="area"/>
+		<result column="room" property="room"/>
 		<result column="intime" property="intime" jdbcType="TIMESTAMP"/>
-		<result column="inuser" property="inuser"  />
+		<result column="inuser" property="inuser"/>
 	</resultMap>
 
 	<insert id="addInlibrary" parameterType="se.zust.entity.Inlibrary">
         INSERT INTO inlibrary(pnum,pname,area,room,intime,inuser) VALUES (#{pnum},#{pname},#{area},#{room},#{intime},#{inuser})
     </insert>
 
+    <delete id="deleteInlibrary" parameterType="se.zust.entity.Inlibrary">
+        DELETE FROM inlibrary WHERE pid = #{pid}
+    </delete>
+
+    <select id="selectByName" parameterType="se.zust.entity.Inlibrary"  resultMap="inlibraryMap">
+        SELECT * FROM inlibrary WHERE inuser = #{0}
+    </select>
+
 	<insert id="addInbase" parameterType="se.zust.entity.Inlibrary">
         INSERT INTO inlibase(pnum,pname,fisid,secid,thiid,indate) VALUES (#{pnum},#{pname},#{fisid},#{secid},#{thiid},#{indate})
     </insert>
 
-	<select id="selectBypid" parameterType="String" resultMap="inlibraryMap" resultType="se.zust.entity.Inlibrary">
-        SELECT * FROM inlibrary WHERE pid=#{pid}
-    </select>
 	<select id="selectByThreeid" parameterType="String" resultMap="inlibraryMap" resultType="se.zust.entity.Inlibrary">
         SELECT * FROM inlibrary WHERE fisid=#{fisid} AND secid=#{secid} AND thiid=#{thiid}
     </select>

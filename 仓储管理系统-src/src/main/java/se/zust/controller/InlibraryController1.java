@@ -31,13 +31,13 @@ public class InlibraryController1 {
 	@Autowired
 	private InlibraryService inlibraryservice;
 	
-	@RequestMapping(value="/inbase1",method=RequestMethod.GET)
-	 public String listall(HttpServletRequest request){
-		List<Inlibrary> inlibrary=inlibraryservice.selectAllInlibrary(1);
-		request.setAttribute("inlibrary", inlibrary);
-    	return "inbase1";
-    }
-	  @RequestMapping(value = "/addInlibrary", method = RequestMethod.POST)
+//	@RequestMapping(value="/inbase1",method=RequestMethod.GET)
+//	 public String listall(HttpServletRequest request){
+//		List<Inlibrary> inlibrary=inlibraryservice.selectAllInlibrary(1);
+//		request.setAttribute("inlibrary", inlibrary);
+//    	return "inbase1";
+//    }
+//	  @RequestMapping(value = "/addInlibrary", method = RequestMethod.POST)
 	    public void addlibrary(ModelMap map,HttpServletRequest req,HttpServletResponse response){
 		  Date date = new Date();
 //		  SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");

@@ -99,3 +99,38 @@ table tr td button{
 #cancel:hover{
 	cursor: pointer;
 }
+#isDelete{
+	position: fixed;
+	z-index: 999;
+	top: 35%;
+	left: 38%;
+	border: 1px solid #C2C2C2;
+	border-radius: 15px;
+	padding:60px;
+	background-color: #FFFFFF;
+	margin: 0;
+	display: none;
+}
+#isDelete div div{
+	width: 100px;
+	height: 30px;
+	background-color: #15D6BA;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 15px;
+	margin: 30px;
+}
+
+#yes{
+	float: left;
+}
+#yes:hover{
+	cursor: pointer;
+}
+#no{
+	float: right;
+}
+#no:hover{
+	cursor: pointer;
+}

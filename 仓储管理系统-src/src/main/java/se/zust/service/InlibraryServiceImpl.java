@@ -23,8 +23,8 @@ public class InlibraryServiceImpl implements InlibraryService{
 		inlibraryDao.addInlibrary(inlibrary);
 	}
 
-	public List<Inlibrary> selectByName(String name) {
-		return inlibraryDao.selectByName(name);
+	public List<Inlibrary> selectByName(String inuser) {
+		return inlibraryDao.selectByName(inuser);
 	}
 
 	public List<Inlibrary> selectAllInlibrary(int nowpage) {
@@ -33,6 +33,10 @@ public class InlibraryServiceImpl implements InlibraryService{
 
 	public int selectAllInlibraryCount() {
 		return inlibraryDao.selectAllInlibraryCount();
+	}
+
+	public void deleteInlibrary(int pid){
+		inlibraryDao.deleteInlibrary(pid);
 	}
 
 }

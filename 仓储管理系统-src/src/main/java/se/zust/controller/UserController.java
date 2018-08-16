@@ -137,7 +137,7 @@ public class UserController {
   	//进入管理员主页
   	@RequestMapping(value="/adhome")
     public String adhome(){
-    	return "adhome";
+    	return "znccglpt";
     }
     //进入用户主页
   	@RequestMapping(value="/home")
