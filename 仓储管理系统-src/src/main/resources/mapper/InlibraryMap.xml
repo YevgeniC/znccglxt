@@ -21,8 +21,8 @@
         DELETE FROM inlibrary WHERE pid = #{pid}
     </delete>
 
-    <select id="selectByName" parameterType="se.zust.entity.Inlibrary"  resultMap="inlibraryMap">
-        SELECT * FROM inlibrary WHERE inuser = #{0}
+    <select id="selectByName" parameterType="String" resultMap="inlibraryMap">
+        SELECT * FROM inlibrary WHERE inuser = #{inuser}
     </select>
 
 	<insert id="addInbase" parameterType="se.zust.entity.Inlibrary">
