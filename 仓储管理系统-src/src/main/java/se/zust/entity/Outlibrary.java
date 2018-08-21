@@ -4,54 +4,84 @@ import java.util.Date;
 
 public class Outlibrary {
 	private int pid;
-	private int pnum;
 	private String pname;
-	private	String fisid;
-	private String secid;
-	private String thiid;
-	private Date outdate;
+	private int pnum;
+	private String area;
+	private String room;
+	private String outTime;
+	private String address;
+	private String outUser;
+	private String GoodsID;
+
 	public int getPid() {
 		return pid;
 	}
+
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	public int getPnum() {
-		return pnum;
-	}
-	public void setPnum(int pnum) {
-		this.pnum = pnum;
-	}
+
 	public String getPname() {
 		return pname;
 	}
+
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public String getFisid() {
-		return fisid;
+
+	public int getPnum() {
+		return pnum;
 	}
-	public void setFisid(String fisid) {
-		this.fisid = fisid;
+
+	public void setPnum(int pnum) {
+		this.pnum = pnum;
 	}
-	public String getSecid() {
-		return secid;
+
+	public String getArea() {
+		return area;
 	}
-	public void setSecid(String secid) {
-		this.secid = secid;
+
+	public void setArea(String area) {
+		this.area = area;
 	}
-	public String getThiid() {
-		return thiid;
+
+	public String getRoom() {
+		return room;
 	}
-	public void setThiid(String thiid) {
-		this.thiid = thiid;
+
+	public void setRoom(String room) {
+		this.room = room;
 	}
-	public Date getOutdate() {
-		return outdate;
+
+	public String getOutTime() {
+		return outTime;
 	}
-	public void setOutdate(Date outdate) {
-		this.outdate = outdate;
+
+	public void setOutTime(String outTime) {
+		this.outTime = outTime;
 	}
-	
-	
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getOutUser() {
+		return outUser;
+	}
+
+	public void setOutUser(String outUser) {
+		this.outUser = outUser;
+	}
+
+	public String getGoodsID() {
+		return GoodsID;
+	}
+
+	public void setGoodsID(String goodsID) {
+		GoodsID = goodsID;
+	}
 }

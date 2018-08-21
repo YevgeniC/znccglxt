@@ -10,6 +10,7 @@ body{
 	z-index: 999;
 }
 #search{
+	width: 200px;
 	height: 25px;
 	margin: 17px 0 17px 25px;
 }
@@ -42,6 +43,9 @@ table{
 table tr{
 	height: 50px;
 }
+table tr td button{
+	border: 0px;
+}
 #title{
 	color: #FFFFFF;
 	background-color: #526C85;
@@ -50,6 +54,13 @@ table tr{
 	float: right;
 	bottom: 0;
 	margin: 25px;
+}
+#fenye div{
+	float: left;
+	margin: 0 5px 0 0;
+}
+.fanye:hover{
+	cursor: pointer;
 }
 #pageNo{
 	width: 30px;
@@ -94,5 +105,39 @@ table tr{
 	float: right;
 }
 #cancel:hover{
+	cursor: pointer;
+}
+#isDelete{
+	position: fixed;
+	z-index: 999;
+	top: 35%;
+	left: 38%;
+	border: 1px solid #C2C2C2;
+	border-radius: 15px;
+	padding:60px;
+	background-color: #FFFFFF;
+	margin: 0;
+	display: none;
+}
+#isDelete div div{
+	width: 100px;
+	height: 30px;
+	background-color: #15D6BA;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 15px;
+	margin: 30px;
+}
+#yes{
+	float: left;
+}
+#yes:hover{
+	cursor: pointer;
+}
+#no{
+	float: right;
+}
+#no:hover{
 	cursor: pointer;
 }

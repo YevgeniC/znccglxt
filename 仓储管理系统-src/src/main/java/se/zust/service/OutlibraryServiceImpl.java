@@ -15,32 +15,32 @@ public class OutlibraryServiceImpl implements OutlibraryService {
 	private OutlibraryDao outlibraryDao;
 
 	public void addOutlibrary(Outlibrary outlibrary) {
-		// TODO Auto-generated method stub
-		outlibraryDao.addOutlibrary(outlibrary);
+
 	}
-
-
-	public List<Outlibrary> selectAllOutlibrary(int nowpage) {
-		// TODO Auto-generated method stub
-		return outlibraryDao.selectAllOutlibrary(nowpage);
-	}
-
 
 	public void delLibrary(int pid) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
+	public void deleteOutibrary(int pid) {
+		outlibraryDao.deleteOutibrary(pid);
+	}
+
+	public List<Outlibrary> selectAllOutlibrary(int strat,int pageSize) {
+		return outlibraryDao.selectAllOutlibrary(strat,pageSize);
+	}
 
 	public int selectAllOutlibraryCount() {
-		// TODO Auto-generated method stub
 		return outlibraryDao.selectAllOutlibraryCount();
 	}
 
+	public List<Outlibrary> selectBy(String search,int strat,int pageSize) {
+		return outlibraryDao.selectBy(search,strat,pageSize);
+	}
 
-
-
-
+	public int selectByCount(String search) {
+		return outlibraryDao.selectByCount(search);
+	}
 
 
 }

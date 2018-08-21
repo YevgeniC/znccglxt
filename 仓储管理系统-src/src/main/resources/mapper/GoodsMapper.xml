@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="se.zust.dao.GoodsDao">
+         <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
+    <resultMap id="GoodsResultMap" type="se.zust.entity.Goods" >
+        <id column="pid" property="pid"  />
+	    <result column="inlibrary_id" property="inLibraryID"  />
+	    <result column="pname" property="pname"/>
+        <result column="pnum" property="pnum"/>
+        <result column="area" property="area"/>
+        <result column="room" property="room"/>
+    </resultMap>
+
+    <select id="selectGoods" resultMap="GoodsResultMap">
+        select
+        *
+        FROM
+        goods
+        <where>
+
+            <if test="null != #{0}">
+                pid = #{0} AND
+            </if>
+            <!--<when test="null != pname">-->
+                <!--pname LIKE "%"#{1}"%" AND-->
+            <!--</when>-->
+            <!--<when test="null != area">-->
+                <!--area = #{2} AND-->
+            <!--</when>-->
+            <!--<when test="null != room">-->
+                <!--room = #{3} AND-->
+            <!--</when>-->
+            <!--<if test="'' != pname">-->
+                <!--pname = #{1} AND-->
+            <!--</if><if test="'' != pname">-->
+                <!--pname = #{1} AND-->
+            <!--</if>-->
+        </where>
+         limit #{4},#{5}
+
+    </select>
+    <select id="selectBy" resultMap="GoodsResultMap">
+        select * from goods
+    </select>
+ </mapper>

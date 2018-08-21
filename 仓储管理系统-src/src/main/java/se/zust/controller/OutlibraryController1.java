@@ -34,10 +34,10 @@ public class OutlibraryController1 {
 		Outlibrary outlibrary=new Outlibrary();
 		outlibrary.setPnum(Integer.parseInt((req.getParameter("pnum")).toString()));
 		outlibrary.setPname((req.getParameter("pname")));
-		outlibrary.setFisid((req.getParameter("fisid")).toString());
-		outlibrary.setSecid((req.getParameter("secid")).toString());
-		outlibrary.setThiid((req.getParameter("thiid")).toString());
-		outlibrary.setOutdate(outdate);
+//		outlibrary.setFisid((req.getParameter("fisid")).toString());
+//		outlibrary.setSecid((req.getParameter("secid")).toString());
+//		outlibrary.setThiid((req.getParameter("thiid")).toString());
+//		outlibrary.setOutdate(outdate);
 		outlibraryservice.addOutlibrary(outlibrary);
 		response.sendRedirect("outbase1");
 	}
@@ -158,7 +158,7 @@ public class OutlibraryController1 {
 		}
 		index = (Integer.parseInt(page)-1)*7;
 		request.setAttribute("totalpage", totalpage);
-		List<Outlibrary> Outlibrary=outlibraryservice.selectAllOutlibrary(index);
+		List<Outlibrary> Outlibrary=outlibraryservice.selectAllOutlibrary(index,10);
 		request.setAttribute("outlibrary", Outlibrary);
 		request.setAttribute("page", page);
 //		List<String> Thiid = BaseService.selectThiid();

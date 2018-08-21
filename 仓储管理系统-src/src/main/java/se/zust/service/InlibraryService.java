@@ -10,11 +10,14 @@ public interface InlibraryService {
 
 	void addInlibrary(Inlibrary inlibrary);
 
-	List<Inlibrary> selectByName(String inuser);
+	void deleteInlibrary(int pid);
 
-	List<Inlibrary> selectAllInlibrary(int nowpage);
+	List<Inlibrary> selectAllInlibrary(int start,int pageSize);
 
 	int selectAllInlibraryCount();
 
-	void deleteInlibrary(int pid);
+	List<Inlibrary> selectBy(String search, int start, int pageSize);
+
+	int selectByCount(String search);
+
 }

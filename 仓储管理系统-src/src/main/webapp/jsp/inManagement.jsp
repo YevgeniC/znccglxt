@@ -10,23 +10,23 @@
 	</head>
 	<body>
 		<div id="top">
-			<input id="search" type="search" />
+			<input id="search" type="search" placeholder="请输入入库单号或物品名称"/>
 			<div id="add">+新建入库单</div>
 		</div>
 		<div id="middle">
 			<div id="mtable">
-				<table cellpadding="0" cellspacing="0" >
+				<table cellpadding='0' cellspacing='0' id='showList'>
 					<tr id="title">
-						<td>入库用户</td>
-						<td>货物名称</td>
+						<td>入库单号</td>
+						<td>物品名称</td>
 						<td>入库数量</td>
 						<td>入库位置</td>
 						<td>入库时间</td>
 						<td>操作</td>
 					</tr>
 					<c:forEach var="inlibrary" items="${inlibrary}" varStatus="status">
-						<tr id="${status.index}">
-							<td><c:out value="${inlibrary.inuser}"></c:out></td>
+						<tr id="${status.index}" class="data">
+							<td><c:out value="${inlibrary.pid}"></c:out></td>
 							<td><c:out value="${inlibrary.pname}"></c:out></td>
 							<td><c:out value="${inlibrary.pnum}"></c:out></td>
 							<td><c:out value="${inlibrary.area} - ${inlibrary.room}"></c:out></td>
@@ -39,15 +39,19 @@
 					</c:forEach>
 				</table>
 			</div>
-			<div id="fenye">
-				<span>当前共<%=(Integer)request.getAttribute("count")%>条记录</span>
-				<span>首页</span>
-				<span>上一页</span>
-				<span>下一页</span>
-				<span>尾页</span>
-				<span>第N页|共N页</span>
+			<div id='fenye'>
+				<div id='totalcount'>当前共<%=(Integer)request.getAttribute("count")%>条记录</div>
+				<div id="first" class="fanye">首页</div>
+				<div id="previous" class="fanye">上一页</div>
+				<div id="next" class="fanye">下一页</div>
+				<div id="last" class="fanye">尾页</div>
+				<div id="pageCount" datafld="<%=(Integer)request.getAttribute("pageCount")%>">
+					第<%=(Integer)request.getAttribute("pageNo")%>页|
+					共<%=(Integer)request.getAttribute("pageCount")%>页
+				</div>
 				<input id="pageNo" type="text"/>
-				<input type="submit" value="GO"/>
+				<input id="Go" type="submit" value="GO"/>
+				<span></span>
 			</div>
 		</div>
 		<form method="POST" id="addInlibrary">

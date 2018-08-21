@@ -441,7 +441,7 @@
                 <div id="box1-1">账户名称</div>
                 <sf:input id="box1-2" type="text" path="username" required="true" placeholder="不支持中文和特殊字符" onclick="text()"/>
                 <div id="box1-3">设置密码</div>
-                <sf:input id="box1-4" type="password" path="password" required="true" placeholder="设置账号密码"onKeyUp="pwStrength(this.value)" onBlur="pwStrength(this.value)"/>
+                <sf:input id="box1-4" type="password" path="password" required="true" placeholder="设置账号密码" onKeyUp="pwStrength(this.value)" onBlur="pwStrength(this.value)"/>
                 <div id="safe">
                     <div id="safename">安全系数：</div>
                     <div id="strength_L" bgcolor="#eeeeee">低</div>

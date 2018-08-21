@@ -23,20 +23,25 @@ public class InlibraryServiceImpl implements InlibraryService{
 		inlibraryDao.addInlibrary(inlibrary);
 	}
 
-	public List<Inlibrary> selectByName(String inuser) {
-		return inlibraryDao.selectByName(inuser);
+	public void deleteInlibrary(int pid){
+		inlibraryDao.deleteInlibrary(pid);
 	}
 
-	public List<Inlibrary> selectAllInlibrary(int nowpage) {
-		return inlibraryDao.selectAllInlibrary(nowpage);
+	public List<Inlibrary> selectAllInlibrary(int start,int pageSize) {
+		return inlibraryDao.selectAllInlibrary(start,pageSize);
 	}
 
 	public int selectAllInlibraryCount() {
 		return inlibraryDao.selectAllInlibraryCount();
 	}
 
-	public void deleteInlibrary(int pid){
-		inlibraryDao.deleteInlibrary(pid);
+	public List<Inlibrary> selectBy(String search, int start, int pageSize) {
+		return inlibraryDao.selectBy(search,start,pageSize);
 	}
+
+	public int selectByCount(String search) {
+		return inlibraryDao.selectByCount(search);
+	}
+
 
 }

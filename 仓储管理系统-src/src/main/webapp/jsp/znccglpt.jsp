@@ -27,26 +27,24 @@
 		</div>
 		<div id="left">
 			<ul id="menu">
-				
-                <li id="1" class="list"><target="iframe_a">入库管理</li>
-                <li id="2" class="list"><a href="select.html" target="iframe_a">物品查询</a></li>
-                <li id="3" class="list"><a href="frame/check.jsp" target="iframe_a">物品盘点</a></li>
-                <li id="4" class="list"><a href="outManagement.html" target="iframe_a">出库管理</a></li>
-                <li id="5" class="list"><a href="movesRecord.html" target="iframe_a">物品位置移动记录</a></li>
-                <li id="6" class="list"><a href="warehouseManagement.html" target="iframe_a">仓库管理</a></li>
-               
+                <li id="1" class="list" target="iframe_a">入库管理</li>
+                <li id="2" class="list" target="iframe_a">物品查询</li>
+                <li id="3" class="list" target="iframe_a">物品盘点</li>
+                <li id="4" class="list" target="iframe_a">出库管理</li>
+                <li id="5" class="list" target="iframe_a">物品位置移动记录</li>
+                <li id="6" class="list" target="iframe_a">仓库管理</li>
             </ul>
 		</div>
 		<div id="right">
-			
             <iframe src="" name="iframe_a" width="100%" height="92%" frameborder="0"></iframe>
-            
             <form id="form1" action="" target="iframe_a" method="post"></form>
        </div>
 	</body>
 <script type="text/javascript">
 	var Url = ["",
 		"inManagement",
+		"select",
+		"check",
 		"outManagement",
 		"movesRecord",
 		"warehouseManagement"
@@ -62,21 +60,19 @@
 		}
 	});
 	
-	$(".list").bind("click",function(){
-//		$(this).attr("style","border-left: 3px solid #7FFF00;background-color: #526C85;");
-		$(this).css("border-left","3px solid #7FFF00");
-		$(this).css("background-color","#526C85");
-//		$(this).siblings().attr("style","border-left: 3px solid transparent;background-color: rgba(51, 68, 83, 1);");
-		$(this).siblings().css("border-left","3px solid transparent");
-		$(this).siblings().css("background-color","rgba(51, 68, 83, 1)");
-//		var Url = $(this).children("a").attr("href");
-//		var Url = "inManagement";
-		$('#form1').attr('action',Url[$(this).attr("id")]);
-		$('#form1').submit();
-	});
+		$(".list").bind("click",function(){
+	//		$(this).attr("style","border-left: 3px solid #7FFF00;background-color: #526C85;");
+			$(this).css("border-left","3px solid #7FFF00");
+			$(this).css("background-color","#526C85");
+	//		$(this).siblings().attr("style","border-left: 3px solid transparent;background-color: rgba(51, 68, 83, 1);");
+			$(this).siblings().css("border-left","3px solid transparent");
+			$(this).siblings().css("background-color","rgba(51, 68, 83, 1)");
+			$('#form1').attr('action',Url[$(this).attr("id")]);
+			$('#form1').submit();
+		});
 	
 	$("#logout").click(function (){
-		window.location.href = "login_1.html";
+		window.location.href = "login_1";
 	});
 </script>
 </html>

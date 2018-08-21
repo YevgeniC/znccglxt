@@ -6,8 +6,18 @@ import se.zust.entity.Library;
 import se.zust.entity.Outlibrary;
 
 public interface OutlibraryDao {
-	public void addOutlibrary(Outlibrary outlibrary);
-	public void delLibrary(int pid);
-	 public List<Outlibrary> selectAllOutlibrary(int nowpage);
-	 public int selectAllOutlibraryCount();
+
+	void addOutlibrary(Outlibrary outlibrary);
+
+	void delLibrary(int pid);
+
+	void deleteOutibrary(int pid);
+
+	List<Outlibrary> selectAllOutlibrary(int strat,int pageSize);
+
+	int selectAllOutlibraryCount();
+
+	List<Outlibrary> selectBy(String search,int strat,int pageSize);
+
+	int selectByCount(String search);
 }
