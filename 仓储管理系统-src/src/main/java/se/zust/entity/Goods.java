@@ -1,12 +1,12 @@
 package se.zust.entity;
 
 public class Goods {
-    int pid;
-    int inLibraryID;
-    String pname;
-    int pnum;
-    String area;
-    String room;
+    private int pid;
+    private int inLibraryID;
+    private String pname;
+    private int pnum;
+    private String area;
+    private String room;
     private Inlibrary inlibrary;
 
     public int getPid() {

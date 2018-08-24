@@ -25,7 +25,7 @@ select{
 	width: 83px;
 	height: 25px;
 }
-#select{
+#search{
 	width: 150px;
 	height: 40px;
 	float: right;
@@ -36,7 +36,7 @@ select{
 	text-align: center;
 	margin: 10px 50px 10px 0 ;
 }
-#select:hover{
+#search:hover{
 	cursor: pointer;
 }
 #selectmore{
@@ -80,9 +80,15 @@ height: 50px;
 }
 #fenye{
 	float: right;
-	/*position: absolute;*/
 	bottom: 0;
 	margin: 25px;
+}
+#fenye div{
+	float: left;
+	margin: 0 5px 0 0;
+}
+.fanye:hover{
+	cursor: pointer;
 }
 #pageNo{
 	width: 30px;

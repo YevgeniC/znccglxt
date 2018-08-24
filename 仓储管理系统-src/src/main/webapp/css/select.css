@@ -84,7 +84,7 @@ table{
 	border: 0;
 }
 table tr{
-height: 50px;
+	height: 50px;
 }
 #title{
 	color: #FFFFFF;
@@ -121,31 +121,6 @@ height: 50px;
 }
 #detail table{
 	text-align: left;
-}
-#outbound{
-	position: fixed;
-	z-index: 999;
-	top: 30%;
-	left: 27%;
-	border: 1px solid #C2C2C2;
-	border-radius: 15px;
-	padding:40px 60px 60px 60px;
-	background-color: #FFFFFF;
-	margin: 0;
-	display: none;
-	outline: 0;
-}
-#outbound table{
-	text-align: left;
-}
-/*#outbound table td:nth-child(1){
-	width: 240px;
-}*/
-#outbound input{
-	margin: 0;
-	padding: 0;
-	width: 100px;
-	height: 20px;
 }
 
 #operation div{

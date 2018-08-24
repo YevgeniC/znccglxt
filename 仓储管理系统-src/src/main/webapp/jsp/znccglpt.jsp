@@ -43,7 +43,7 @@
 <script type="text/javascript">
 	var Url = ["",
 		"inManagement",
-		"select",
+		"select?admin",
 		"check",
 		"outManagement",
 		"movesRecord",

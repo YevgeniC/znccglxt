@@ -9,34 +9,29 @@
 		<result column="pname" property="pname"/>
 		<result column="area" property="area"/>
 		<result column="room" property="room"/>
-		<result column="intime" property="intime" jdbcType="TIMESTAMP"/>
-		<result column="inuser" property="inuser"/>
+		<result column="in_date" property="intime" jdbcType="TIMESTAMP"/>
+		<result column="in_user" property="inuser"/>
 	</resultMap>
 
 	<insert id="addInlibrary" parameterType="se.zust.entity.Inlibrary">
-        INSERT INTO inlibrary(pnum,pname,area,room,intime,inuser) VALUES (#{pnum},#{pname},#{area},#{room},#{intime},#{inuser})
+        INSERT INTO inlibrary(pnum,pname,area,room,in_date,in_user) VALUES (#{pnum},#{pname},#{area},#{room},#{intime},#{inuser})
     </insert>
 
     <delete id="deleteInlibrary" parameterType="se.zust.entity.Inlibrary">
         DELETE FROM inlibrary WHERE pid = #{pid}
     </delete>
 
-    <select id="selectByName" parameterType="se.zust.entity.Inlibrary"  resultMap="inlibraryMap">
-        SELECT * FROM inlibrary WHERE inuser = #{0}
-    </select>
-
-	<insert id="addInbase" parameterType="se.zust.entity.Inlibrary">
-        INSERT INTO inlibase(pnum,pname,fisid,secid,thiid,indate) VALUES (#{pnum},#{pname},#{fisid},#{secid},#{thiid},#{indate})
-    </insert>
-
-	<select id="selectByThreeid" parameterType="String" resultMap="inlibraryMap" resultType="se.zust.entity.Inlibrary">
-        SELECT * FROM inlibrary WHERE fisid=#{fisid} AND secid=#{secid} AND thiid=#{thiid}
-    </select>
-
 	<select id="selectAllInlibrary" resultMap="inlibraryMap">
-        SELECT pid,pname,pnum,area,room,inuser,intime FROM inlibrary
+        SELECT * FROM inlibrary ORDER BY in_date DESC limit #{0} ,#{1}
      </select>
 	<select id="selectAllInlibraryCount" resultType="Integer">
         SELECT IFNULL(COUNT(*),0) FROM inlibrary
     </select>
+
+    <select id="selectBy" resultMap="inlibraryMap">
+		SELECT * FROM inlibrary WHERE pname LIKE "%"#{0}"%" or pid LIKE "%"#{0}"%" Order BY in_date DESC limit #{1},#{2}
+	</select>
+    <select id="selectByCount" parameterType="String"  resultType="Integer">
+		select IFNULL(COUNT(*),0) FROM inlibrary WHERE pname like "%"#{_parameter}"%" or pid LIKE "%"#{_parameter}"%"
+	</select>
 </mapper>

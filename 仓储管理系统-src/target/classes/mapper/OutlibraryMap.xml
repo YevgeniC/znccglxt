@@ -7,21 +7,33 @@
         <id column="pid" property="pid"  />
 	    <result column="pnum" property="pnum"  />
 	    <result column="pname" property="pname"  />
-	    <result column="fisid" property="fisid" />
-	    <result column="secid" property="secid"  />
-	    <result column="thiid" property="thiid"  />
-	    <result column="outdate" property="outdate"  />
+	    <result column="area" property="area" />
+	    <result column="room" property="room"  />
+	    <result column="out_date" property="outTime"  jdbcType="TIMESTAMP" />
+	    <result column="address" property="address"  />
+		<result column="out_user" property="outUser"  />
+		<result column="goods_id" property="GoodsID"  />
     </resultMap>
     <insert id="addOutlibrary" parameterType="se.zust.entity.Outlibrary">
     	INSERT INTO outlibrary(pid,pnum,pname,fisid,secid,thiid,outdate) VALUES
     	(#{pid},#{pnum},#{pname},#{fisid},#{secid},#{thiid},#{outdate})
     	</insert>
+	<delete id="deleteOutibrary" parameterType="Integer">
+		DELETE FROM outlibrary where pid = #{pid}
+	</delete>
+
 	<select id="selectAllOutlibrary" resultMap="outlibraryMap" resultType="se.zust.entity.Outlibrary">
-        SELECT * FROM outlibrary Order BY outdate DESC limit #{nowpage},7 
-    	</select>
+        SELECT * FROM outlibrary Order BY out_date DESC limit #{0},#{1}
+	</select>
     	  <select id="selectAllOutlibraryCount" resultType="Integer">
         SELECT IFNULL(COUNT(*),0) FROM outlibrary
     </select>
-    
+
+	<select id="selectBy" resultMap="outlibraryMap">
+		SELECT * FROM outlibrary WHERE pname LIKE "%"#{0}"%" or pid LIKE "%"#{0}"%" Order BY out_date DESC limit #{1},#{2}
+	</select>
+	<select id="selectByCount" parameterType="String"  resultType="Integer">
+		select IFNULL(COUNT(*),0) FROM outlibrary WHERE pname like "%"#{_parameter}"%" or pid LIKE "%"#{_parameter}"%"
+	</select>
         </mapper>
         

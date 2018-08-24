@@ -78,7 +78,7 @@
 		</div>
 		<div id="detail"  tabindex="0">
 			<table>
-				<th colspan="2" style="text-align: center;">
+				<!--<th colspan="2" style="text-align: center;">
 					—————— <span id="thid">物品详情</span> ——————
 				</th>
 				<tr>
@@ -94,8 +94,9 @@
 				</tr>
 				<tr>
 					<td>入库用户：<span id="person">Mike</span></td>
-				</tr>
+				</tr>-->
 			</table>
+			<div  id="operation"></div>
 		</div>
 		<div id="outbound"  tabindex="0">
 			<table>
@@ -120,5 +121,5 @@
 			</div>
 		</div>
 	</body>
-	<script src="../js/util/select.js"  charset="GBK"></script>
+	<script src="../js/util/select.js"></script>
 </html>

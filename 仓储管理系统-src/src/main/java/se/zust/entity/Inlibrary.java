@@ -1,9 +1,9 @@
 package se.zust.entity;
 
 public class Inlibrary {
-	private  int pid;
+	private int pid;
 	private String pname;
-	private  int pnum;
+	private int pnum;
 	private String area;
 	private String room;
 	private String intime;
