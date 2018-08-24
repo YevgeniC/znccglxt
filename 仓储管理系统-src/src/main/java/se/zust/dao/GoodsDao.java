@@ -1,5 +1,6 @@
 package se.zust.dao;
 
+import org.apache.ibatis.annotations.Param;
 import se.zust.entity.Goods;
 
 import java.util.List;
@@ -12,11 +13,14 @@ public interface GoodsDao {
 
 	void updateGoods(int pid, int pnum, String area, String room);
 
-	List<Goods> selectGoods(Integer pid, String pname, String area, String room, int start, int pageSize);
+	List<Goods> selectGoods(@Param(value = "pid") Integer pid, @Param(value = "pname") String pname, @Param(value = "area") String area,
+							@Param(value = "room") String room, @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime,
+                            @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
 
-	int selectGoodsCount(Integer pid, String pname, String area, String room);
+	int selectGoodsCount(@Param(value = "pid") Integer pid, @Param(value = "pname") String pname, @Param(value = "area") String area,
+						 @Param(value = "room") String room,@Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime);
 
-	List<Goods> selectBy(String search, int start,int pageSize);
+	List<Goods> selectBy(@Param(value = "search") String search, @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
 
-	int selectByCount(String search);
+	int selectByCount(@Param(value = "search") String search);
 }

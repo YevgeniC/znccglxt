@@ -10,11 +10,11 @@
 	<body>
 		<div id="top">
 			<div id="icon">
-				<img id="u22_img" class="img " src="images/login/icon_u4.png">
+				<img id="u22_img" class="img " src="../picture/system/icon_u4.png">
 			</div>
 			<div id="name">智能仓储管理平台</div>
 			<div id="head">
-				<img id="u21_img" class="img" src="images/home/headimg_u21.png" tabindex="0" style="outline: none;">
+				<img id="u21_img" class="img" src="../picture/system/headimg_u21.png" tabindex="0" style="outline: none;">
 			</div>
 			<div id="LoginName">admin</div>
 		</div>

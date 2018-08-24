@@ -7,6 +7,7 @@ public class Goods {
     int pnum;
     String area;
     String room;
+    private Inlibrary inlibrary;
 
     public int getPid() {
         return pid;
@@ -54,5 +55,13 @@ public class Goods {
 
     public void setRoom(String room) {
         this.room = room;
+    }
+
+    public Inlibrary getInlibrary() {
+        return inlibrary;
+    }
+
+    public void setInlibrary(Inlibrary inlibrary) {
+        this.inlibrary = inlibrary;
     }
 }

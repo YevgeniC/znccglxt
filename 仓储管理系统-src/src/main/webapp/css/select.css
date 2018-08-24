@@ -2,6 +2,18 @@ body{
 	margin: 0;
 	padding: 0;
 }
+.shandow {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	display: none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.6);
+}
 #head{
 	padding: 0 0 0 25px;
 	position: fixed;
@@ -25,7 +37,7 @@ select{
 	width: 83px;
 	height: 25px;
 }
-#select{
+#search{
 	width: 150px;
 	height: 40px;
 	float: right;
@@ -36,7 +48,7 @@ select{
 	text-align: center;
 	margin: 10px 50px 10px 0 ;
 }
-#select:hover{
+#search:hover{
 	cursor: pointer;
 }
 #selectmore{
@@ -80,11 +92,81 @@ height: 50px;
 }
 #fenye{
 	float: right;
-	/*position: absolute;*/
 	bottom: 0;
 	margin: 25px;
+}
+#fenye div{
+	float: left;
+	margin: 0 5px 0 0;
+}
+.fanye:hover{
+	cursor: pointer;
 }
 #pageNo{
 	width: 30px;
 	text-align: center;
+}
+#detail{
+	position: fixed;
+	z-index: 999;
+	top: 30%;
+	left: 27%;
+	border: 1px solid #C2C2C2;
+	border-radius: 15px;
+	padding:40px 60px 60px 60px;
+	background-color: #FFFFFF;
+	margin: 0;
+	display: none;
+	outline: 0;
+}
+#detail table{
+	text-align: left;
+}
+#outbound{
+	position: fixed;
+	z-index: 999;
+	top: 30%;
+	left: 27%;
+	border: 1px solid #C2C2C2;
+	border-radius: 15px;
+	padding:40px 60px 60px 60px;
+	background-color: #FFFFFF;
+	margin: 0;
+	display: none;
+	outline: 0;
+}
+#outbound table{
+	text-align: left;
+}
+/*#outbound table td:nth-child(1){
+	width: 240px;
+}*/
+#outbound input{
+	margin: 0;
+	padding: 0;
+	width: 100px;
+	height: 20px;
+}
+
+#operation div{
+	width: 100px;
+	height: 30px;
+	background-color: #15D6BA;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 15px;
+	margin: 30px 55px 0 55px;
+}
+#save{
+	float: left;
+}
+#save:hover{
+	cursor: pointer;
+}
+#cancel{
+	float: right;
+}
+#cancel:hover{
+	cursor: pointer;
 }

@@ -14,9 +14,9 @@ public interface GoodsService {
 
 	void updateGoods(int pid, int pnum, String area, String room);
 
-	List<Goods> selectGoods(Integer pid, String pname, String area, String room, int start, int pageSize);
+	List<Goods> selectGoods(Integer pid, String pname, String area, String room, String startTime, String endTime, int start, int pageSize);
 
-	int selectGoodsCount(int pid, String pname, String area, String room);
+	int selectGoodsCount(Integer pid, String pname, String area, String room, String startTime, String endTime);
 
 	List<Goods> selectBy(String search, int start,int pageSize);
 
