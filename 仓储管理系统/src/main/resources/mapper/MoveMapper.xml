@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="se.zust.dao.MoveDao">
+         <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
+    <resultMap id="MoveResultMap" type="se.zust.entity.Move" >
+        <id column="mid" property="mid" jdbcType="INTEGER"/>
+	    <result column="goods_id" property="goodsID" jdbcType="INTEGER"/>
+	    <result column="pname" property="pname" jdbcType="VARCHAR"/>
+        <result column="pnum" property="pnum" jdbcType="INTEGER"/>
+        <result column="before_area" property="beforeArea" jdbcType="VARCHAR"/>
+        <result column="before_room" property="beforeRoom" jdbcType="VARCHAR"/>
+        <result column="after_area" property="afterArea" jdbcType="VARCHAR"/>
+        <result column="after_room" property="afterRoom" jdbcType="VARCHAR"/>
+        <result column="move_time" property="moveTime" jdbcType="TIMESTAMP"/>
+        <result column="move_user" property="moveUser" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="addMove" parameterType="se.zust.entity.Move">
+        insert into move(goods_id,pname,pnum,before_area,before_room,after_area,after_room,move_time,move_user) values
+        (#{goodsID},#{pname},#{pnum},#{beforeArea},#{beforeRoom},#{afterArea},#{afterRoom},#{moveTime},#{moveUser})
+    </insert>
+
+    <select id="selectMove" parameterType="se.zust.entity.Move" resultMap="MoveResultMap">
+        select *
+        from move
+        <where>
+            <if test="mid != null">
+                mid like CONCAT(CONCAT('%', #{mid}), '%')
+            </if>
+            <if test="pname != '' and pname != null">
+                and pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
+            </if>
+            <if test="startTime != '' and startTime != null">
+                AND move_time &gt;= #{startTime,jdbcType=VARCHAR}
+            </if>
+            <if test="endTime != '' and endTime != null">
+                AND move_time &lt; #{endTime,jdbcType=VARCHAR}
+            </if>
+            <if test="moveUser != '' and moveUser != null">
+                and move_user like "%"#{moveUser}"%"
+            </if>
+        </where>
+        order by move_time desc
+         limit #{start},#{pageSize}
+    </select>
+    <select id="selectMoveCount" parameterType="se.zust.entity.Move" resultType="INTEGER">
+        select IFNULL(count(*),0)
+        from move
+        <where>
+            <if test="mid != null">
+                mid like CONCAT(CONCAT('%', #{mid}), '%')
+            </if>
+            <if test="pname != '' and pname != null">
+                and pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
+            </if>
+            <if test="startTime != '' and startTime != null">
+                AND move_time &gt;= #{startTime,jdbcType=VARCHAR}
+            </if>
+            <if test="endTime != '' and endTime != null">
+                AND move_time &lt; #{endTime,jdbcType=VARCHAR}
+            </if>
+            <if test="moveUser != '' and moveUser != null">
+                and move_user like "%"#{moveUser}"%"
+            </if>
+        </where>
+    </select>
+ </mapper>

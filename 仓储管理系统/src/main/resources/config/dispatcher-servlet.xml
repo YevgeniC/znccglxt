@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    <!--配置SpringMVC-->
+    <!--1.开启SpringMVC注解-->
+
+    <!-- (1)自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean
+    (2)提供一系列：数据绑定，数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持-->
+    <mvc:annotation-driven />
+    <!--2.静态资源默认servlet配置
+     (1)静态资源(js、image等)的访问
+     (2)允许使用"/"做整体映射-->
+    <mvc:default-servlet-handler/>
+
+    <!--3.配置页面控制器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!--4.扫描控制器,当配置了它后,Spring会自动的到com.xero.Controller下扫描带有@controller @service @component等注解等类,将他们自动实例化-->
+    <context:component-scan base-package="se.zust.controller" />
+</beans>
