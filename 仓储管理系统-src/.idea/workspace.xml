@@ -8,36 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b085c9d3-19f8-4c5a-a5f3-a0dee7f60797" name="Default" comment="入库管理、出库管理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/MoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/controller/MoveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/OutlibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/controller/OutlibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/controller/OutlibraryController1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/dao/InlibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/dao/InlibraryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/dao/OutlibraryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/dao/OutlibraryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/entity/Outlibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/entity/Outlibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/InlibraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/InlibraryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/InlibraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/InlibraryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BaseMap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/InlibraryMap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/InlibraryMap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OutlibraryMap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OutlibraryMap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/outManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/outManagement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/inManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/inManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/select.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/znccglpt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/znccglpt.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/InlibraryMap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/InlibraryMap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OutlibraryMap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OutlibraryMap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se/zust/controller/OutlibraryController1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se/zust/controller/OutlibraryController1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se/zust/dao/OutlibraryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se/zust/dao/OutlibraryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se/zust/entity/Outlibrary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se/zust/entity/Outlibrary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se/zust/service/OutlibraryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se/zust/service/OutlibraryService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,6 +17,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -80,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-23">
-              <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+              <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -97,11 +70,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OutlibraryController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OutlibraryController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/controller/OutlibraryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-368">
+            <state relative-caret-position="-187">
               <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutlibraryService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -381,14 +366,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="frame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="仓储管理系统-src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="仓储管理系统-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -431,7 +408,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -615,7 +592,7 @@
       <workItem from="1535097737754" duration="6686000" />
       <workItem from="1535331788535" duration="26447000" />
       <workItem from="1535418123616" duration="25418000" />
-      <workItem from="1535504159852" duration="1437000" />
+      <workItem from="1535504159852" duration="3004000" />
     </task>
     <task id="LOCAL-00001" summary="inuser入参类型定为String">
       <created>1534468644473</created>
@@ -652,11 +629,25 @@
       <option name="project" value="LOCAL" />
       <updated>1535104320594</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="物品盘点及功能完善">
+      <created>1535505944915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1535505944915</updated>
+    </task>
+    <task id="LOCAL-00007" summary="js">
+      <created>1535506936704</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1535506936704</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271323000" />
+    <option name="totallyTimeSpent" value="272890000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -672,7 +663,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" weight="0.46753246" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" weight="0.30844155" />
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32900432" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
@@ -682,19 +673,20 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840087" visible="true" weight="0.28138527" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32792208" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4978678" weight="0.28138527" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32792208" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32792208" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.30844155" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840087" weight="0.30844155" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.61255413" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32792208" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1705757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1705757" />
       <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -702,7 +694,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="12" weight="0.32972974" />
@@ -777,7 +768,9 @@
     <MESSAGE value="物品查询数据显示" />
     <MESSAGE value="pom修改" />
     <MESSAGE value="物品位置移动记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="物品位置移动记录" />
+    <MESSAGE value="物品盘点及功能完善" />
+    <MESSAGE value="js" />
+    <option name="LAST_COMMIT_MESSAGE" value="js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -785,19 +778,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/classes/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.192/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.749/InlibraryController.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.158/InlibraryController1.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.710/OutlibraryController.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.752/OutlibraryController1.java" />
     <entry file="file://$PROJECT_DIR$/logs/ssm.log">
@@ -891,13 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/MoveService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1020,13 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/entity/Outlibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="843">
@@ -1094,7 +1060,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/controller/InlibraryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-23">
-          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1108,10 +1074,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/LibraryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/MoveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LibraryMap.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-951" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/picture/bottom.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/picture/bottom1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/picture/carousel1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/controller/OutlibraryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
+        <state relative-caret-position="-187">
           <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/se/zust/service/OutlibraryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

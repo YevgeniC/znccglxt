@@ -1,13 +1,11 @@
 package se.zust.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import se.zust.dao.OutlibraryDao;
-import se.zust.entity.Library;
 import se.zust.entity.Outlibrary;
+
+import java.util.List;
 
 @Service("outlibraryService")
 public class OutlibraryServiceImpl implements OutlibraryService {
