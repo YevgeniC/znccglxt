@@ -12,28 +12,37 @@
 	    <result column="out_date" property="outTime"  jdbcType="TIMESTAMP" />
 	    <result column="address" property="address"  />
 		<result column="out_user" property="outUser"  />
-		<result column="goods_id" property="GoodsID"  />
+		<result column="goods_id" property="goodsID" />
     </resultMap>
     <insert id="addOutlibrary" parameterType="se.zust.entity.Outlibrary">
-    	INSERT INTO outlibrary(pid,pnum,pname,fisid,secid,thiid,outdate) VALUES
-    	(#{pid},#{pnum},#{pname},#{fisid},#{secid},#{thiid},#{outdate})
-    	</insert>
+    	INSERT INTO outlibrary(goods_id,pname,pnum,area,room,out_date,address,out_user) VALUES
+    	(#{goodsID,jdbcType=INTEGER},#{pname,jdbcType=VARCHAR},#{pnum,jdbcType=INTEGER},
+    	#{area,jdbcType=VARCHAR},#{room,jdbcType=VARCHAR},#{outTime,jdbcType=VARCHAR},
+    	#{address,jdbcType=VARCHAR},#{outUser,jdbcType=VARCHAR})
+	</insert>
 	<delete id="deleteOutibrary" parameterType="Integer">
 		DELETE FROM outlibrary where pid = #{pid}
 	</delete>
 
-	<select id="selectAllOutlibrary" resultMap="outlibraryMap" resultType="se.zust.entity.Outlibrary">
-        SELECT * FROM outlibrary Order BY out_date DESC limit #{0},#{1}
+	<select id="selectOutlibrary" resultMap="outlibraryMap" >
+		select *
+		from outlibrary
+		<where>
+            <if test="search != '' and search != null">
+                pname like "%"#{search,jdbcType=VARCHAR}"%" or pid LIKE "%"#{search,jdbcType=VARCHAR}"%"
+            </if>
+		</where>
+		Order BY out_date DESC
+        limit #{start},#{pageSize}
 	</select>
-    	  <select id="selectAllOutlibraryCount" resultType="Integer">
-        SELECT IFNULL(COUNT(*),0) FROM outlibrary
-    </select>
-
-	<select id="selectBy" resultMap="outlibraryMap">
-		SELECT * FROM outlibrary WHERE pname LIKE "%"#{0}"%" or pid LIKE "%"#{0}"%" Order BY out_date DESC limit #{1},#{2}
+	<select id="selectOutlibraryCount" resultType="Integer">
+		select IFNULL(count(*),0)
+		from outlibrary
+        <where>
+            <if test="search != '' and search != null">
+                pname like "%"#{search,jdbcType=VARCHAR}"%" or pid LIKE "%"#{search,jdbcType=VARCHAR}"%"
+            </if>
+        </where>
 	</select>
-	<select id="selectByCount" parameterType="String"  resultType="Integer">
-		select IFNULL(COUNT(*),0) FROM outlibrary WHERE pname like "%"#{_parameter}"%" or pid LIKE "%"#{_parameter}"%"
-	</select>
-        </mapper>
+</mapper>
         

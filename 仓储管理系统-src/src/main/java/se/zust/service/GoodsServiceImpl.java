@@ -17,16 +17,16 @@ public class GoodsServiceImpl implements GoodsService{
 	private GoodsDao goodsDao;
 
 
-	public void addGoods(Goods goods) {
-		goodsDao.addGoods(goods);
+	public void addGoods(int inLibraryID, String pname, int pnum, String area, String room) {
+		goodsDao.addGoods(inLibraryID,pname,pnum,area,room);
 	}
 
 	public void deleteGoods(int pid) {
 		goodsDao.deleteGoods(pid);
 	}
 
-	public void updateGoods(int pid, int pnum, String area, String room) {
-		updateGoods(pid,pnum,area,room);
+	public void updateGoods(Integer pid, int pnum, String area, String room) {
+		goodsDao.updateGoods(pid,pnum,area,room);
 	}
 
 	public List<Goods> selectGoods(Integer pid, String pname, String area, String room, String startTime, String endTime, int start, int pageSize) {
@@ -37,11 +37,15 @@ public class GoodsServiceImpl implements GoodsService{
 		return goodsDao.selectGoodsCount(pid,pname,area,room,startTime,endTime);
 	}
 
-	public List<Goods> selectBy(String search, int start, int pageSize) {
-		return goodsDao.selectBy(search,start,pageSize);
+	public List<Goods> selectInventory(String search, int start, int pageSize) {
+		return goodsDao.selectInventory(search, start, pageSize);
 	}
 
-	public int selectByCount(String search) {
-		return goodsDao.selectByCount(search);
+	public int selectInventoryCount(String search) {
+		return goodsDao.selectInventoryCount(search);
+	}
+
+	public List<Goods> selectByName(String pname) {
+		return goodsDao.selectByName(pname);
 	}
 }

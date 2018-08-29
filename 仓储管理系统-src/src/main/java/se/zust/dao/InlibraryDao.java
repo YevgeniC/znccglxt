@@ -2,6 +2,7 @@ package se.zust.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import se.zust.entity.Inlibrary;
 
 public interface InlibraryDao {
@@ -10,11 +11,11 @@ public interface InlibraryDao {
 
 	void deleteInlibrary(int pid);
 
-	List<Inlibrary> selectAllInlibrary(int start,int pageSize);
+	List<Inlibrary> select(@Param(value = "search")String search,
+						   @Param(value = "start")int start,
+						   @Param(value = "pageSize")int pageSize);
 
-	int selectAllInlibraryCount();
+	int selectCount(@Param(value = "search")String search);
 
-	List<Inlibrary> selectBy(String search, int start, int pageSize);
-
-	int selectByCount(String search);
+	int selectPid();
 }

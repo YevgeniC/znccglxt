@@ -2,22 +2,20 @@ package se.zust.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import se.zust.entity.Library;
 import se.zust.entity.Outlibrary;
 
 public interface OutlibraryDao {
 
-	void addOutlibrary(Outlibrary outlibrary);
-
-	void delLibrary(int pid);
+	void addOutlibrary(@Param(value = "goodsID")Integer goodsID,@Param(value = "pname")String pname,
+					   @Param(value = "pnum")int pnum,@Param(value = "area")String area,
+					   @Param(value = "room")String room,@Param(value = "outTime") String outTime,
+					   @Param(value = "address")String address,@Param(value = "outUser")String outUser);
 
 	void deleteOutibrary(int pid);
 
-	List<Outlibrary> selectAllOutlibrary(int strat,int pageSize);
+	List<Outlibrary> selectOutlibrary(@Param(value = "search")String search,@Param(value = "start")int start,@Param(value = "pageSize")int pageSize);
 
-	int selectAllOutlibraryCount();
-
-	List<Outlibrary> selectBy(String search,int strat,int pageSize);
-
-	int selectByCount(String search);
+	int selectOutlibraryCount(@Param(value = "search")String search);
 }

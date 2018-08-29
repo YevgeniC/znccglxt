@@ -1,16 +1,13 @@
 package se.zust.controller;
 
 import net.sf.json.JSONObject;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import se.zust.entity.Goods;
 import se.zust.entity.Move;
+import se.zust.service.GoodsService;
 import se.zust.service.MoveService;
-import sun.nio.cs.ext.SJIS;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,24 +22,37 @@ import java.util.List;
 public class MoveController {
     @Autowired
     MoveService moveService;
+    @Autowired
+    GoodsService goodsService;
     @RequestMapping(value = "/movesRecord",method = RequestMethod.POST)
     public String movesRecord(){
         return "movesRecord";
     }
 
     @RequestMapping(value="/addmove",method=RequestMethod.POST)
+    @ResponseBody
     public JSONObject addmove(@RequestParam(value = "goodsID",required = false) Integer goodsID,
                               @RequestParam(value = "pname",required = false) String pname,
                               @RequestParam(value = "pnum",required = false) int pnum,
+                              @RequestParam(value = "max",required = false) int max,
                               @RequestParam(value = "beforeArea",required = false) String beforeArea,
                               @RequestParam(value = "beforeRoom",required = false) String beforeRoom,
                               @RequestParam(value = "afterArea",required = false) String afterArea,
                               @RequestParam(value = "afterRoom",required = false) String afterRoom,
                               @RequestParam(value = "moveUser",required = false) String moveUser){
         JSONObject jsonObject = new JSONObject();
+
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
+        if (pnum == max){
+            moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
+            goodsService.updateGoods(goodsID,pnum,afterArea,afterRoom);
+        }else {
+            moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
+            goodsService.updateGoods(goodsID,max-pnum,afterArea,afterRoom);
+            List<Goods> goods = goodsService.selectGoods(goodsID,null,null,null,null,null,0,1);
+            goodsService.addGoods(goods.get(0).getInLibraryID(),pname,pnum,afterArea,afterRoom);
+        }
         return jsonObject;
     }
 

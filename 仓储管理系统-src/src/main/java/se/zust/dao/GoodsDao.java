@@ -7,11 +7,13 @@ import java.util.List;
 
 
 public interface GoodsDao {
-	void addGoods(Goods goods);
+	void addGoods(@Param(value = "inLibraryID") int inLibraryID, @Param(value = "pname") String pname,
+				  @Param(value = "pnum") int pnum, @Param(value = "area") String area, @Param(value = "room") String room);
 
-	void deleteGoods(int pid);
+	void deleteGoods(@Param(value = "pid")int pid);
 
-	void updateGoods(int pid, int pnum, String area, String room);
+	void updateGoods(@Param(value = "pid") Integer pid, @Param(value = "pnum") int pnum,
+					 @Param(value = "area") String area, @Param(value = "room") String room);
 
 	List<Goods> selectGoods(@Param(value = "pid") Integer pid, @Param(value = "pname") String pname, @Param(value = "area") String area,
 							@Param(value = "room") String room, @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime,
@@ -20,7 +22,9 @@ public interface GoodsDao {
 	int selectGoodsCount(@Param(value = "pid") Integer pid, @Param(value = "pname") String pname, @Param(value = "area") String area,
 						 @Param(value = "room") String room,@Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime);
 
-	List<Goods> selectBy(@Param(value = "search") String search, @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
+	List<Goods> selectInventory(@Param(value = "search") String search, @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
 
-	int selectByCount(@Param(value = "search") String search);
+	int selectInventoryCount(@Param(value = "search") String search);
+
+	List<Goods> selectByName(@Param(value = "pname") String pname);
 }

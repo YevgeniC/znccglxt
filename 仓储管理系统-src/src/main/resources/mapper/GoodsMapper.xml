@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        <mapper namespace="se.zust.dao.GoodsDao">
+<mapper namespace="se.zust.dao.GoodsDao">
          <!-- 配置resultMap属性，进行表字段与实体类属性映射 -->
     <resultMap id="GoodsResultMap" type="se.zust.entity.Goods" >
         <id column="pid" property="pid" jdbcType="INTEGER"/>
@@ -16,6 +16,20 @@
             <result column="in_user" property="inuser" jdbcType="VARCHAR"/>
         </association>
     </resultMap>
+
+    <insert id="addGoods" parameterType="se.zust.entity.Goods">
+        insert into goods (inlibrary_id,pname,pnum,area,room) values (#{inLibraryID},#{pname},#{pnum},#{area},#{room})
+    </insert>
+
+    <delete id="deleteGoods" parameterType="se.zust.entity.Goods">
+        delete from goods where pid = #{pid}
+    </delete>
+
+    <update id="updateGoods" parameterType="se.zust.entity.Goods">
+        update goods
+        SET pnum = #{pnum},area = #{area},room = #{room}
+        where pid = #{pid}
+    </update>
 
     <select id="selectGoods" resultMap="GoodsResultMap" parameterType="se.zust.entity.Goods">
         SELECT
@@ -74,4 +88,28 @@
         </where>
     </select>
 
+    <select id="selectInventory" resultType="java.util.Map">
+        SELECT
+        pname,sum(pnum) as sum
+        from goods
+        <where>
+            <if test="search != '' and search != null">
+                pname LIKE "%"#{search}"%"
+            </if>
+        </where>
+        group by pname
+        limit #{start},#{pageSize}
+    </select>
+    <select id="selectInventoryCount" resultType="Integer">
+        select IFNULL(COUNT(DISTINCT pname),0)
+        from goods
+        <where>
+            <if test="search != '' and search != null">
+                pname LIKE "%"#{search}"%"
+            </if>
+        </where>
+    </select>
+    <select id="selectByName" resultType="java.util.Map">
+        select pname,pnum,area,room from goods where pname = #{pname,jdbcType = VARCHAR}
+    </select>
  </mapper>

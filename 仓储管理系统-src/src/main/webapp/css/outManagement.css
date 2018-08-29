@@ -2,6 +2,18 @@ body{
 	margin: 0;
 	padding: 0;
 }
+.shandow {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	display: none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.6);
+}
 #top{
 	position: fixed;
 	width: 100%;
@@ -14,7 +26,7 @@ body{
 	height: 25px;
 	margin: 17px 0 17px 25px;
 }
-#add{
+#select{
 	width: 150px;
 	height: 40px;
 	float: right;
@@ -25,7 +37,7 @@ body{
 	text-align: center;
 	margin: 10px 25px 10px 0 ;
 }
-#add:hover{
+#select:hover{
 	cursor: pointer;
 }
 #middle{
@@ -66,46 +78,22 @@ table tr td button{
 	width: 30px;
 	text-align: center;
 }
-#addDetail{
+#detail{
 	position: fixed;
 	z-index: 999;
-	top: 35%;
-	left: 38%;
+	top: 20%;
+	left: 27%;
 	border: 1px solid #C2C2C2;
 	border-radius: 15px;
-	padding:60px;
+	padding:40px 60px 60px 60px;
 	background-color: #FFFFFF;
 	margin: 0;
 	display: none;
+	outline: 0;
 }
-#addDetail input{
-	height: 20px;
-	font-size: 17px;
-}
-#addDetail select{
-	width: 100px;;
-}
-#addDetail div div{
-	width: 100px;
-	height: 30px;
-	background-color: #15D6BA;
-	color: #FFFFFF;
-	text-align: center;
-	line-height: 30px;
-	border-radius: 15px;
-	margin: 30px;
-}
-#save{
-	float: left;
-}
-#save:hover{
-	cursor: pointer;
-}
-#cancel{
-	float: right;
-}
-#cancel:hover{
-	cursor: pointer;
+#detail table{
+	width: 420px;
+	text-align: left;
 }
 #isDelete{
 	position: fixed;

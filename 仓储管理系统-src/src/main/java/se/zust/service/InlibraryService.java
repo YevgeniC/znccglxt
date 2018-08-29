@@ -3,6 +3,7 @@ package se.zust.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import se.zust.entity.Inlibrary;
 import se.zust.entity.Library;
 
@@ -12,12 +13,10 @@ public interface InlibraryService {
 
 	void deleteInlibrary(int pid);
 
-	List<Inlibrary> selectAllInlibrary(int start,int pageSize);
+	List<Inlibrary> select(String search,int start,int pageSize);
 
-	int selectAllInlibraryCount();
+	int selectCount(String search);
 
-	List<Inlibrary> selectBy(String search, int start, int pageSize);
-
-	int selectByCount(String search);
+	int selectPid();
 
 }

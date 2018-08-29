@@ -32,7 +32,7 @@
                 <li id="3" class="list" target="iframe_a">物品盘点</li>
                 <li id="4" class="list" target="iframe_a">出库管理</li>
                 <li id="5" class="list" target="iframe_a">物品位置移动记录</li>
-                <li id="6" class="list" target="iframe_a">仓库管理</li>
+                <!--<li id="6" class="list" target="iframe_a">仓库管理</li>-->
             </ul>
 		</div>
 		<div id="right">
@@ -42,9 +42,9 @@
 	</body>
 <script type="text/javascript">
 	var Url = ["",
-		"inManagement",
-		"select?admin",
-		"check",
+		"inManagement?超级管理员",
+		"select?超级管理员",
+		"inventory",
 		"outManagement",
 		"movesRecord",
 		"warehouseManagement"

@@ -11,7 +11,7 @@ public class Outlibrary {
 	private String outTime;
 	private String address;
 	private String outUser;
-	private String GoodsID;
+	private int GoodsID;
 
 	public int getPid() {
 		return pid;
@@ -77,11 +77,11 @@ public class Outlibrary {
 		this.outUser = outUser;
 	}
 
-	public String getGoodsID() {
+	public int getGoodsID() {
 		return GoodsID;
 	}
 
-	public void setGoodsID(String goodsID) {
+	public void setGoodsID(int goodsID) {
 		GoodsID = goodsID;
 	}
 }

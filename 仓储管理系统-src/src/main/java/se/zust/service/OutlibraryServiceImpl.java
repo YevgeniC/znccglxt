@@ -14,32 +14,22 @@ public class OutlibraryServiceImpl implements OutlibraryService {
 	@Autowired
 	private OutlibraryDao outlibraryDao;
 
-	public void addOutlibrary(Outlibrary outlibrary) {
 
+	public void addOutlibrary(Integer goodsID, String pname, int pnum, String area, String room, String outTime, String address, String outUser) {
+		outlibraryDao.addOutlibrary(goodsID, pname, pnum, area, room, outTime, address, outUser);
 	}
 
-	public void delLibrary(int pid) {
-
-	}
 
 	public void deleteOutibrary(int pid) {
 		outlibraryDao.deleteOutibrary(pid);
 	}
 
-	public List<Outlibrary> selectAllOutlibrary(int strat,int pageSize) {
-		return outlibraryDao.selectAllOutlibrary(strat,pageSize);
+	public List<Outlibrary> selectOutlibrary(String search, int start, int pageSize) {
+		return outlibraryDao.selectOutlibrary(search, start, pageSize);
 	}
 
-	public int selectAllOutlibraryCount() {
-		return outlibraryDao.selectAllOutlibraryCount();
-	}
-
-	public List<Outlibrary> selectBy(String search,int strat,int pageSize) {
-		return outlibraryDao.selectBy(search,strat,pageSize);
-	}
-
-	public int selectByCount(String search) {
-		return outlibraryDao.selectByCount(search);
+	public int selectOutlibraryCount(String search) {
+		return outlibraryDao.selectOutlibraryCount(search);
 	}
 
 

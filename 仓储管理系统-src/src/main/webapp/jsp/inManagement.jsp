@@ -22,33 +22,15 @@
 						<td>入库数量</td>
 						<td>入库位置</td>
 						<td>入库时间</td>
-						<td>操作</td>
+				<!--		<td>操作</td>-->
 					</tr>
-					<c:forEach var="inlibrary" items="${inlibrary}" varStatus="status">
-						<tr id="${status.index}" class="data">
-							<td><c:out value="${inlibrary.pid}"></c:out></td>
-							<td><c:out value="${inlibrary.pname}"></c:out></td>
-							<td><c:out value="${inlibrary.pnum}"></c:out></td>
-							<td><c:out value="${inlibrary.area} - ${inlibrary.room}"></c:out></td>
-							<td><c:out value="${inlibrary.intime}"></c:out></td>
-							<td>
-								<button datafld="${inlibrary.pid}" class="detail" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #15D6BA">详情</button> |
-								<button datafld="${inlibrary.pid}" class="delete" style="border: 0; background-color: #00000000; cursor: pointer; font-size: 15px; color: #FF0000">删除</button>
-							</td>
-						</tr>
-					</c:forEach>
 				</table>
 			</div>
 			<div id='fenye'>
-				<div id='totalcount'>当前共<%=(Integer)request.getAttribute("count")%>条记录</div>
-				<div id="first" class="fanye">首页</div>
+				<div id='totalcount'>当前共N条记录</div>
 				<div id="previous" class="fanye">上一页</div>
 				<div id="next" class="fanye">下一页</div>
-				<div id="last" class="fanye">尾页</div>
-				<div id="pageCount" datafld="<%=(Integer)request.getAttribute("pageCount")%>">
-					第<%=(Integer)request.getAttribute("pageNo")%>页|
-					共<%=(Integer)request.getAttribute("pageCount")%>页
-				</div>
+				<div id="pageCount">第N页 | 共N页</div>
 				<input id="pageNo" type="text"/>
 				<input id="Go" type="submit" value="GO"/>
 				<span></span>
@@ -75,13 +57,13 @@
 			</div>
 		</div>
 		</form>
-		<div id="isDelete">
+		<!--<div id="isDelete">
 			<div style="text-align: center;">是否删除该记录？</div>
 			<div>
 				<div id="yes">是</div>
 				<div id="no">否</div>
 			</div>
-		</div>
+		</div>-->
 	</body>
 	<script src="../js/util/inManagement.js"></script>
 </html>

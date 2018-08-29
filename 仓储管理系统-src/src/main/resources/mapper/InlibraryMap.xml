@@ -20,18 +20,29 @@
     <delete id="deleteInlibrary" parameterType="se.zust.entity.Inlibrary">
         DELETE FROM inlibrary WHERE pid = #{pid}
     </delete>
-
-	<select id="selectAllInlibrary" resultMap="inlibraryMap">
-        SELECT * FROM inlibrary ORDER BY in_date DESC limit #{0} ,#{1}
-     </select>
-	<select id="selectAllInlibraryCount" resultType="Integer">
-        SELECT IFNULL(COUNT(*),0) FROM inlibrary
-    </select>
-
-    <select id="selectBy" resultMap="inlibraryMap">
-		SELECT * FROM inlibrary WHERE pname LIKE "%"#{0}"%" or pid LIKE "%"#{0}"%" Order BY in_date DESC limit #{1},#{2}
+	
+	<select id="select" parameterType="String" resultMap="inlibraryMap">
+		SELECT * 
+		FROM inlibrary
+		<where>
+			<if test="search != '' and search != null">
+				pname like "%"#{search,jdbcType=VARCHAR}"%" or pid LIKE "%"#{search,jdbcType=VARCHAR}"%"
+			</if>
+		</where>
+		Order BY in_date DESC
+		limit #{start},#{pageSize}
 	</select>
-    <select id="selectByCount" parameterType="String"  resultType="Integer">
-		select IFNULL(COUNT(*),0) FROM inlibrary WHERE pname like "%"#{_parameter}"%" or pid LIKE "%"#{_parameter}"%"
+	<select id="selectCount" parameterType="String" resultType="Integer">
+		select IFNULL(COUNT(*),0)
+		from inlibrary
+		<where>
+			<if test="search != '' and search != null">
+				pname like "%"#{search,jdbcType=VARCHAR}"%" or pid LIKE "%"#{search,jdbcType=VARCHAR}"%"
+			</if>
+		</where>
+	</select>
+
+	<select id="selectPid" resultType="Integer">
+		select pid from inlibrary order by pid desc LIMIT 1
 	</select>
 </mapper>
