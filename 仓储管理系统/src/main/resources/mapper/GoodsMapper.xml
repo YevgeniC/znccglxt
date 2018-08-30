@@ -22,7 +22,7 @@
     </insert>
 
     <delete id="deleteGoods" parameterType="se.zust.entity.Goods">
-        delete from goods where pid = #{pid}
+        delete from goods where pid = #{pid,jdbcType=VARCHAR}
     </delete>
 
     <update id="updateGoods" parameterType="se.zust.entity.Goods">
@@ -41,7 +41,7 @@
         ON g.inlibrary_id = i.pid
         <where>
             <if test="pid != null">
-                g.pid like CONCAT(CONCAT('%', #{pid}), '%')
+                g.pid like CONCAT(CONCAT('%', #{pid,jdbcType=VARCHAR}), '%')
             </if>
             <if test="pname != '' and pname != null">
                 AND g.pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
@@ -68,7 +68,7 @@
         ON g.inlibrary_id = i.pid
         <where>
             <if test="pid != null">
-                g.pid like CONCAT(CONCAT('%', #{pid}), '%')
+                g.pid like CONCAT(CONCAT('%', #{pid,jdbcType=VARCHAR}), '%')
             </if>
             <if test="pname != '' and pname != null ">
                 AND g.pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"

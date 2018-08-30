@@ -17,7 +17,7 @@ public class GoodsServiceImpl implements GoodsService{
 		goodsDao.addGoods(inLibraryID,pname,pnum,area,room);
 	}
 
-	public void deleteGoods(int pid) {
+	public void deleteGoods(Integer pid) {
 		goodsDao.deleteGoods(pid);
 	}
 
@@ -25,11 +25,11 @@ public class GoodsServiceImpl implements GoodsService{
 		goodsDao.updateGoods(pid,pnum,area,room);
 	}
 
-	public List<Goods> selectGoods(Integer pid, String pname, String area, String room, String startTime, String endTime, int start, int pageSize) {
+	public List<Goods> selectGoods(String pid, String pname, String area, String room, String startTime, String endTime, int start, int pageSize) {
 		return goodsDao.selectGoods(pid,pname,area,room,startTime,endTime,start,pageSize);
 	}
 
-	public int selectGoodsCount(Integer pid, String pname, String area, String room, String startTime, String endTime) {
+	public int selectGoodsCount(String pid, String pname, String area, String room, String startTime, String endTime) {
 		return goodsDao.selectGoodsCount(pid,pname,area,room,startTime,endTime);
 	}
 

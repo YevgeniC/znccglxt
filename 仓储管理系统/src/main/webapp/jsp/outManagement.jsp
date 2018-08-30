@@ -35,6 +35,14 @@
 				<input id="pageNo" type="text"/>
 				<input id="Go" type="submit" value="GO"/>
 			</div>
+			<div id="count">显示
+				<select class="count">
+					<option value="10">10</option>
+					<option value="20">20</option>
+					<option value="30">30</option>
+				</select>
+				条记录
+			</div>
 		</div>
 		<div id="detail"  tabindex="0">
 			<table>

@@ -77,6 +77,15 @@ table tr{
 	width: 30px;
 	text-align: center;
 }
+#count{
+	float: left;
+	bottom: 0;
+	margin: 25px;
+}
+#count select{
+	width: 39px;
+	height: 19px;
+}
 #detail{
 	position: fixed;
 	z-index: 999;

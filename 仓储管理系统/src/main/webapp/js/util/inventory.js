@@ -2,6 +2,7 @@
 var goodsName;			//物品名称
 var pid;							//入库单编号
 var pageNo = 1;			//页码
+var pageSize = 10;		//页面显示记录条数
 var pageCount;				//总页数
 var count;						//记录数
 var isShow = 0;					//
@@ -16,7 +17,8 @@ var getData = function () {
 		dataType:"JSON",
 		data:{
 			"search":search,
-			"pageNo":pageNo
+			"pageNo":pageNo,
+			"pageSize":pageSize
 		},
 		success:function (data){
 			console.log(data);
@@ -105,6 +107,15 @@ var stitchPopup = function (data){
 	}
 	$("#detail").children("table").html(tablehtml);
 }
+
+//页面记录数
+$(".count").change(function () {
+	console.log($(this).val());
+	pageSize = $(this).val();
+	pageNo = 1;
+	$("#pageNo").val(pageNo);
+	getData();
+});
 //下一页
 $("#fenye").on("click","#next",function () {
 	pageNo += 1;

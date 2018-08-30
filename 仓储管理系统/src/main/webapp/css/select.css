@@ -102,6 +102,15 @@ table tr{
 .fanye:hover{
 	cursor: pointer;
 }
+#count{
+	float: left;
+	bottom: 0;
+	margin: 25px;
+}
+#count select{
+	width: 39px;
+	height: 19px;
+}
 #pageNo{
 	width: 30px;
 	text-align: center;

@@ -26,7 +26,7 @@
         from move
         <where>
             <if test="mid != null">
-                mid like CONCAT(CONCAT('%', #{mid}), '%')
+                mid like CONCAT(CONCAT('%', #{mid,jdbcType=VARCHAR}), '%')
             </if>
             <if test="pname != '' and pname != null">
                 and pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
@@ -49,7 +49,7 @@
         from move
         <where>
             <if test="mid != null">
-                mid like CONCAT(CONCAT('%', #{mid}), '%')
+                mid like CONCAT(CONCAT('%', #{mid,jdbcType=VARCHAR}), '%')
             </if>
             <if test="pname != '' and pname != null">
                 and pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"

@@ -66,6 +66,11 @@ table tr td button{
 	width: 30px;
 	text-align: center;
 }
+#count{
+	float: left;
+	bottom: 0;
+	margin: 25px;
+}
 #addDetail{
 	position: fixed;
 	z-index: 999;

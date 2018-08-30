@@ -33,7 +33,14 @@
 				<div id="pageCount">第N页 | 共N页</div>
 				<input id="pageNo" type="text"/>
 				<input id="Go" type="submit" value="GO"/>
-				<span></span>
+			</div>
+			<div id="count">显示
+				<select class="count">
+					<option value="10">10</option>
+					<option value="20">20</option>
+					<option value="30">30</option>
+				</select>
+				条记录
 			</div>
 		</div>
 		<form method="POST" id="addInlibrary">
@@ -57,13 +64,7 @@
 			</div>
 		</div>
 		</form>
-		<!--<div id="isDelete">
-			<div style="text-align: center;">是否删除该记录？</div>
-			<div>
-				<div id="yes">是</div>
-				<div id="no">否</div>
-			</div>
-		</div>-->
+
 	</body>
 	<script src="../js/util/inManagement.js"></script>
 </html>

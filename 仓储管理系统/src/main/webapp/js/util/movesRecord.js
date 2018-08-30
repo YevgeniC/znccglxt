@@ -5,6 +5,7 @@ var moveUser;			//负责人姓名
 var startTime;			//开始时间
 var endTime;				//结束时间
 var pageNo = 1;		//页码
+var pageSize = 10;		//页面显示记录条数
 var pageCount;			//总页数
 
 $("#pageNo").val(pageNo);
@@ -33,9 +34,10 @@ var getData = function () {
 			"mid":mid,
 			"pname":goodsName,
 			"moveUser":moveUser,
-			 "startTime":startTime,
-			 "endTime":endTime,
-			 "pageNo":pageNo
+			"startTime":startTime,
+			"endTime":endTime,
+			"pageNo":pageNo,
+			"pageSize":pageSize
 		},
 		success:function (data){
 			console.log(data);
@@ -83,6 +85,14 @@ $("#search").click(function (){
 	getData();
 });
 
+//页面记录数
+$(".count").change(function () {
+	console.log($(this).val());
+	pageSize = $(this).val();
+	pageNo = 1;
+	$("#pageNo").val(pageNo);
+	getData();
+});
 //下一页
 $("#fenye").on("click","#next",function () {
 	pageNo += 1;

@@ -62,11 +62,11 @@ public class InlibraryController {
 	@RequestMapping(value="/selectInlibrary",method=RequestMethod.POST)
 	@ResponseBody
 	public JSONObject selectInlibrary(@RequestParam(value = "search",required = false) String search,
-									  @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo){
+									  @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo,
+									  @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize){
 		JSONObject jsonObject = new JSONObject();
 		List<Inlibrary> inlibrary = null;
 		int count = 0;
-		int pageSize = 10;
 		int start = (pageNo - 1) * pageSize;
 		int pageCount = 0;
         inlibrary = inlibraryservice.select(search,start,pageSize);

@@ -3,6 +3,7 @@ var isShowDel = 0;		//删除弹窗显示状态；0为不显示，1位显示
 var search;					//搜索内容
 var pid;							//入库单编号
 var pageNo = 1;			//页码
+var pageSize = 10;		//页面显示记录条数
 var pageCount;				//总页数
 var count;						//记录数
 var realName = decodeURI(window.location.href.split("?")[1]);
@@ -18,7 +19,8 @@ var getData = function () {
 		dataType:"JSON",
 		data:{
 			"search":search,
-			"pageNo":pageNo
+			"pageNo":pageNo,
+			"pageSize":pageSize
 		},
 		success:function (data){
 			console.log(data);
@@ -108,41 +110,6 @@ $("#cancel").click(function(){
 	isShowAdd = 0
 });
 
-////显示删除弹窗
-//$("table").on('click','tr td .delete',function(){
-//	pid = $(this).attr("datafld");
-//	console.log(pid);
-//	if (0 == isShowDel) {
-//		$("#isDelete").show();
-//		isShowDel = 1;		
-//	}else if (1 == isShowDel) {
-//		$("#isDelete").hide();
-//		isShowDel = 0
-//	}
-//});
-////删除 -> 是
-//$("#yes").click(function () {
-//	$.ajax({
-//		type:"post",
-//		url:"deleteInlibrary",
-//		data:{
-//			"pid":pid
-//		},
-//		success:function (data) {
-//			window.location.reload();
-//		},
-//		error:function (XMLHttpRequest, textStatus, errorThrown) {
-//			console.log(XMLHttpRequest.status);
-//			console.log(textStatus);
-//		}
-//	});
-//});
-////删除 -> 否
-//$("#no").click(function(){
-//	$("#isDelete").hide();
-//	isShowDel = 0
-//});
-
 //查询
 $("#search").keydown(function (e){
 	//判断回车
@@ -153,6 +120,14 @@ $("#search").keydown(function (e){
 	}
 });
 
+//页面记录数
+$(".count").change(function () {
+	console.log($(this).val());
+	pageSize = $(this).val();
+	pageNo = 1;
+	$("#pageNo").val(pageNo);
+	getData();
+});
 //下一页
 $("#fenye").on("click","#next",function () {
 	pageNo += 1;

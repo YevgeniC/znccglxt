@@ -3,6 +3,7 @@ var isShowDel = 0;		//删除弹窗显示状态；0为不显示，1位显示
 var search;					//搜索内容
 var pid;							//入库单编号
 var pageNo = 1;			//页码
+var pageSize = 10;		//页面显示记录条数
 var pageCount;				//总页数
 var count;						//记录数
 
@@ -16,7 +17,8 @@ var getData = function () {
 		dataType:"JSON",
 		data:{
 			"search":search,
-			"pageNo":pageNo
+			"pageNo":pageNo,
+			"pageSize":pageSize
 		},
 		success:function (data){
 			console.log(data);
@@ -62,7 +64,7 @@ var stitchPopup = function (data){
 		tablehtml = tablehtml + '<tr><td>物品数量：</td><td id="num">'+data.result[0].pnum+'</td><td>物品位置：</td><td id="location">'+data.result[0].area +' - '+data.result[0].room+'</td></tr>';
 		tablehtml = tablehtml + '<tr><td>物品去向：</td><td colspan="3" id="address">'+data.result[0].address+'</td></tr>';
 		tablehtml = tablehtml + '<tr><td>出库时间：</td><td id="time">'+data.result[0].outTime+'</td></tr>';
-		tablehtml = tablehtml +'<tr><td>出库用户：</td><td id="person">'+data.result[0].outUesr+'</td></tr>';
+		tablehtml = tablehtml +'<tr><td>出库用户：</td><td id="person">'+data.result[0].outUser+'</td></tr>';
 		$("#detail").children("table").html(tablehtml);
 }
 
@@ -136,6 +138,14 @@ $("#select").click(function (){
 	getData();
 });
 
+//页面记录数
+$(".count").change(function () {
+	console.log($(this).val());
+	pageSize = $(this).val();
+	pageNo = 1;
+	$("#pageNo").val(pageNo);
+	getData();
+});
 //下一页
 $("#next").click(function(){
 	pageNo += 1;

@@ -16,7 +16,7 @@
     </resultMap>
     <insert id="addOutlibrary" parameterType="se.zust.entity.Outlibrary">
     	INSERT INTO outlibrary(goods_id,pname,pnum,area,room,out_date,address,out_user) VALUES
-    	(#{goodsID,jdbcType=INTEGER},#{pname,jdbcType=VARCHAR},#{pnum,jdbcType=INTEGER},
+    	(#{goodsID,jdbcType=VARCHAR},#{pname,jdbcType=VARCHAR},#{pnum,jdbcType=INTEGER},
     	#{area,jdbcType=VARCHAR},#{room,jdbcType=VARCHAR},#{outTime,jdbcType=VARCHAR},
     	#{address,jdbcType=VARCHAR},#{outUser,jdbcType=VARCHAR})
 	</insert>

@@ -50,7 +50,7 @@ public class MoveController {
         }else {
             moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
             goodsService.updateGoods(goodsID,max-pnum,afterArea,afterRoom);
-            List<Goods> goods = goodsService.selectGoods(goodsID,null,null,null,null,null,0,1);
+            List<Goods> goods = goodsService.selectGoods(String.valueOf(goodsID),null,null,null,null,null,0,1);
             goodsService.addGoods(goods.get(0).getInLibraryID(),pname,pnum,afterArea,afterRoom);
         }
         return jsonObject;
@@ -58,16 +58,16 @@ public class MoveController {
 
     @RequestMapping(value="/selectmove",method=RequestMethod.POST)
     @ResponseBody
-    public JSONObject selectmove(@RequestParam(value = "mid" ,required = false) Integer mid,
+    public JSONObject selectmove(@RequestParam(value = "mid" ,required = false) String mid,
                                  @RequestParam(value = "pname", required = false) String pname,
                                  @RequestParam(value = "moveUser", required = false) String moveUser,
                                  @RequestParam(value = "startTime",required = false) String startTime,
                                  @RequestParam(value = "endTime",required = false) String endTime,
-                                 @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo){
+                                 @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo,
+                                 @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize){
         JSONObject jsonObject = new JSONObject();
         List<Move> moves = null;
         int count = 0;
-        int pageSize = 10;
         int start = (pageNo - 1) * pageSize;
         int pageCount = 0;
         moves = moveService.selectMove(mid,pname,moveUser,startTime,endTime,start,pageSize);

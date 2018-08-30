@@ -27,18 +27,18 @@ public class GoodsController {
     }
     @RequestMapping(value="/selectGoods",method=RequestMethod.POST)
     @ResponseBody
-    public JSONObject selectGoods(@RequestParam(value = "pid",required = false) Integer pid,
+    public JSONObject selectGoods(@RequestParam(value = "pid",required = false) String pid,
                                 @RequestParam(value = "pname",required = false) String pname,
                                 @RequestParam(value = "area",required = false) String area,
                                 @RequestParam(value = "room",required = false) String room,
                                 @RequestParam(value = "startTime",required = false) String startTime,
                                 @RequestParam(value = "endTime",required = false) String endTime,
                                 @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo,
+                                @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize,
                                 @RequestParam(value = "isAccurate",required = false,defaultValue = "0") int isAccurate){
         JSONObject jsonObject = new JSONObject();
         List<Goods> goods = null;
         int count = 0;
-        int pageSize = 10;
         int start = (pageNo - 1) * pageSize;
         int pageCount = 0;
         if (1 == isAccurate){
@@ -59,15 +59,15 @@ public class GoodsController {
     }
     @RequestMapping(value="/selectDetail",method=RequestMethod.POST)
     @ResponseBody
-    public JSONObject selectDetail(@RequestParam(value = "pid",required = true) Integer pid,
+    public JSONObject selectDetail(@RequestParam(value = "pid",required = true) String pid,
                                    @RequestParam(value = "pname",required = false) String pname,
                                    @RequestParam(value = "area",required = false) String area,
                                    @RequestParam(value = "room",required = false) String room,
                                    @RequestParam(value = "startTime",required = false) String startTime,
                                    @RequestParam(value = "endTime",required = false) String endTime,
-                                   @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo){
+                                   @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo,
+                                   @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize){
         List<Goods> goods = null;
-        int pageSize = 10;
         int start = (pageNo - 1) * pageSize;
         goods = goodsService.selectGoods(pid,pname,area,room,startTime,endTime,start,pageSize);
         for (Goods good: goods){
@@ -87,11 +87,11 @@ public class GoodsController {
     @RequestMapping(value = "/selectInventory",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject selectInventory(@RequestParam(value = "search",required = false)String search,
-                                      @RequestParam(value = "pageNo",required = false,defaultValue = "1")int pageNo){
+                                      @RequestParam(value = "pageNo",required = false,defaultValue = "1")int pageNo,
+                                      @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize){
         JSONObject jsonObject = new JSONObject();
         List<Goods> goods = null;
         int count = 0;
-        int pageSize = 10;
         int start = (pageNo - 1) * pageSize;
         int pageCount = 0;
         goods = goodsService.selectInventory(search,start,pageSize);

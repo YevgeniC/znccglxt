@@ -65,11 +65,11 @@ public class OutlibraryController {
 	@RequestMapping(value = "/selectOutlibrary",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject selectOutlibrary(@RequestParam(value = "search",required = false) String search,
-                                       @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo){
+                                       @RequestParam(value = "pageNo",required = false,defaultValue = "1") int pageNo,
+                                       @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize){
 	    JSONObject jsonObject = new JSONObject();
         List<Outlibrary> outlibrary = null;
         int count = 0;
-        int pageSize = 10;
         int start = (pageNo - 1) * pageSize;
         int pageCount = 0;
         outlibrary = outlibraryservice.selectOutlibrary(search,start,pageSize);

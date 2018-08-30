@@ -11,15 +11,15 @@ import java.util.List;
  */
 public interface MoveDao {
 
-    void addMove(@Param(value = "goodsID") int goodsID, @Param(value = "pname") String pname, @Param(value = "pnum") int pnum,
+    void addMove(@Param(value = "goodsID") Integer goodsID, @Param(value = "pname") String pname, @Param(value = "pnum") int pnum,
                  @Param(value = "beforeArea") String beforeArea, @Param(value = "beforeRoom") String beforeRoom,
                  @Param(value = "afterArea") String afterArea, @Param(value = "afterRoom") String afterRoom,
                  @Param(value = "moveTime") String moveTime, @Param(value = "moveUser") String moveUser);
 
-    List<Move> selectMove(@Param(value = "mid") Integer mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
+    List<Move> selectMove(@Param(value = "mid") String mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
                           @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime,
                           @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
 
-    int selectMoveCount(@Param(value = "mid") Integer mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
+    int selectMoveCount(@Param(value = "mid") String mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
                         @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime);
 }
