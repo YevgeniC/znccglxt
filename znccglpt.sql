@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-08-29 13:43:14
+Date: 2018-08-30 11:09:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,12 +27,12 @@ CREATE TABLE `goods` (
   `area` varchar(255) DEFAULT NULL,
   `room` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1578948972 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1578948974 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('1578948944', '1151864949', '奶酪', '12', 'A1', '101');
+INSERT INTO `goods` VALUES ('1578948904', '1151864949', '奶酪', '12', 'A1', '101');
 INSERT INTO `goods` VALUES ('1578948945', '1151864950', '奶酪', '14', 'A2', '102');
 INSERT INTO `goods` VALUES ('1578948946', '1151864950', '起司', '14', 'A1', '101');
 INSERT INTO `goods` VALUES ('1578948947', '1151864975', '蛤蛤', '15', 'A2', '156');
@@ -60,6 +60,7 @@ INSERT INTO `goods` VALUES ('1578948968', '1151865032', '1', '1', 'A1', '101');
 INSERT INTO `goods` VALUES ('1578948969', '1151865033', '千张', '1', 'A1', '101');
 INSERT INTO `goods` VALUES ('1578948970', '1151864989', '肥宅快乐水', '12', 'A2', '103');
 INSERT INTO `goods` VALUES ('1578948971', '1151864989', '肥宅快乐水', '12', 'A2', '103');
+INSERT INTO `goods` VALUES ('1578948972', '1151865034', '农夫山泉', '81', 'A1', '101');
 
 -- ----------------------------
 -- Table structure for inlibrary
@@ -74,7 +75,7 @@ CREATE TABLE `inlibrary` (
   `in_date` datetime DEFAULT NULL,
   `in_user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1151865034 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1151865035 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of inlibrary
@@ -98,6 +99,7 @@ INSERT INTO `inlibrary` VALUES ('1151865022', '十全长者', '65', 'A3', '405',
 INSERT INTO `inlibrary` VALUES ('1151865023', '张宝华', '1', 'A1', '101', '2018-08-17 11:51:52', '张宝华');
 INSERT INTO `inlibrary` VALUES ('1151865025', ' 梁逸峰', '2', 'A1', '102', '2018-08-23 11:02:28', '梁逸峰');
 INSERT INTO `inlibrary` VALUES ('1151865033', '千_张', '1', 'A1', '101', '2018-08-27 14:57:03', '超级管理员');
+INSERT INTO `inlibrary` VALUES ('1151865034', '农夫山泉', '100', 'A2', '103', '2018-08-30 09:56:09', '超级管理员');
 
 -- ----------------------------
 -- Table structure for move
@@ -115,7 +117,7 @@ CREATE TABLE `move` (
   `move_time` datetime DEFAULT NULL,
   `move_user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1184949805 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1184949808 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of move
@@ -148,6 +150,9 @@ INSERT INTO `move` VALUES ('1184949801', '1578948944', '奶酪', '14', 'A3', '10
 INSERT INTO `move` VALUES ('1184949802', '1578948948', '肥宅快乐水', '12', 'A1', '101', 'A2', '103', '2018-08-27 17:22:26', '超级管理员');
 INSERT INTO `move` VALUES ('1184949803', '1578948948', '肥宅快乐水', '12', 'A1', '101', 'A2', '103', '2018-08-27 17:22:26', '超级管理员');
 INSERT INTO `move` VALUES ('1184949804', '1578948944', '奶酪', '1', 'A3', '101', 'A1', '101', '2018-08-27 17:24:37', '超级管理员');
+INSERT INTO `move` VALUES ('1184949805', '1578948972', '农夫山泉', '10', 'A2', '103', 'A3', '101', '2018-08-30 10:05:09', '超级管理员');
+INSERT INTO `move` VALUES ('1184949806', '1578948972', '农夫山泉', '10', 'A2', '103', 'A1', '101', '2018-08-30 10:14:16', '超级管理员');
+INSERT INTO `move` VALUES ('1184949807', '1578948973', '农夫山泉', '10', 'A1', '101', 'A1', '102', '2018-08-30 10:15:20', '超级管理员');
 
 -- ----------------------------
 -- Table structure for outlibrary
@@ -164,7 +169,7 @@ CREATE TABLE `outlibrary` (
   `address` varchar(255) DEFAULT NULL,
   `out_user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1156498522 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1156498524 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of outlibrary
@@ -193,6 +198,8 @@ INSERT INTO `outlibrary` VALUES ('1156498518', '1578948944', '奶酪', '1', 'A1'
 INSERT INTO `outlibrary` VALUES ('1156498519', '1578948972', '奶酪', '1', 'A1', '101', '2018-08-28 10:46:26', '我爱普股份股票符合', '超级管理员');
 INSERT INTO `outlibrary` VALUES ('1156498520', '1578948972', '奶酪', '1', 'A1', '101', '2018-08-28 10:46:40', '我爱普股份股票符合', '超级管理员');
 INSERT INTO `outlibrary` VALUES ('1156498521', '1578948972', '奶酪', '1', 'A1', '101', '2018-08-28 10:50:21', '就要付邮费贵', '超级管理员');
+INSERT INTO `outlibrary` VALUES ('1156498522', '1578948973', '农夫山泉', '10', 'A1', '102', '2018-08-30 10:15:41', '科院超市', '超级管理员');
+INSERT INTO `outlibrary` VALUES ('1156498523', '1578948972', '农夫山泉', '9', 'A1', '101', '2018-08-30 10:17:03', '东和公寓', '超级管理员');
 
 -- ----------------------------
 -- Table structure for user
