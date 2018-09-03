@@ -9,14 +9,14 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     <!--配置SpringMVC-->
-    <!--1.开启SpringMVC注解-->
 
-    <!-- (1)自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean
-    (2)提供一系列：数据绑定，数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持-->
+    <!-- 1.开启SpringMVC注解
+        (1)自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean
+        (2)提供一系列：数据绑定，数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持-->
     <mvc:annotation-driven />
     <!--2.静态资源默认servlet配置
-     (1)静态资源(js、image等)的访问
-     (2)允许使用"/"做整体映射-->
+         (1)静态资源(js、image等)的访问
+         (2)允许使用"/"做整体映射-->
     <mvc:default-servlet-handler/>
 
     <!--3.配置页面控制器-->
