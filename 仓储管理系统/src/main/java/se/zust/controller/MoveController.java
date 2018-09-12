@@ -32,6 +32,7 @@ public class MoveController {
     @RequestMapping(value="/addmove",method=RequestMethod.POST)
     @ResponseBody
     public JSONObject addmove(@RequestParam(value = "goodsID",required = false) Integer goodsID,
+                              @RequestParam(value = "category",required = false) String category,
                               @RequestParam(value = "pname",required = false) String pname,
                               @RequestParam(value = "pnum",required = false) int pnum,
                               @RequestParam(value = "max",required = false) int max,
@@ -44,14 +45,15 @@ public class MoveController {
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+        moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
+
         if (pnum == max){
-            moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
             goodsService.updateGoods(goodsID,pnum,afterArea,afterRoom);
         }else {
-            moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
+//            moveService.addMove(goodsID,pname,pnum,beforeArea,beforeRoom,afterArea,afterRoom,date,moveUser);
             goodsService.updateGoods(goodsID,max-pnum,afterArea,afterRoom);
-            List<Goods> goods = goodsService.selectGoods(String.valueOf(goodsID),null,null,null,null,null,0,1);
-            goodsService.addGoods(goods.get(0).getInLibraryID(),pname,pnum,afterArea,afterRoom);
+            List<Goods> goods = goodsService.selectGoods(String.valueOf(goodsID),null,null,null,null,null,null,0,1);
+            goodsService.addGoods(goods.get(0).getInLibraryID(),category,pname,pnum,afterArea,afterRoom);
         }
         return jsonObject;
     }

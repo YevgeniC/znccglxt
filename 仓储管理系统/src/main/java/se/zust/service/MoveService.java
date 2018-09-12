@@ -11,15 +11,10 @@ import java.util.List;
  */
 public interface MoveService {
 
-    void addMove(@Param(value = "goodsID") Integer goodsID, @Param(value = "pname") String pname, @Param(value = "pnum") int pnum,
-                 @Param(value = "beforeArea") String beforeArea, @Param(value = "beforeRoom") String beforeRoom,
-                 @Param(value = "afterArea") String afterArea, @Param(value = "afterRoom") String afterRoom,
-                 @Param(value = "moveTime") String moveTime, @Param(value = "moveUser") String moveUser);
+    void addMove(Integer goodsID, String pname, int pnum, String beforeArea, String beforeRoom,
+                 String afterArea, String afterRoom, String moveTime,  String moveUser);
 
-    List<Move> selectMove(@Param(value = "mid") String mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
-                          @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime,
-                          @Param(value = "start") int start, @Param(value = "pageSize") int pageSize);
+    List<Move> selectMove(String mid, String pname, String moveUser, String startTime,String endTime, int start, int pageSize);
 
-    int selectMoveCount(@Param(value = "mid") String mid, @Param(value = "pname") String pname, @Param(value = "moveUser") String moveUser,
-                        @Param(value = "startTime") String startTime,@Param(value ="endTime") String endTime);
+    int selectMoveCount(String mid, String pname, String moveUser, String startTime, String endTime);
 }

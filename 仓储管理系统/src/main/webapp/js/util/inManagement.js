@@ -71,17 +71,21 @@ $("#add").click(function(){
 });
 //新增入库单 -> 保存
 $("#save").click(function(){
+	var category = $("#category").val();
     var goodsName = $("#GoodsName").val();
 	var goodsNum = $("#GoodsCount").val();
 	var Area = $("#area").val();
 	var room = $("#room").val();
 	if ("" == goodsName) {
 		alert("请输入物品名称");
+	}if ("---" == category) {
+		alert("请旋转物品类型");
 	}else {
 		//添加入库单
 		$.ajax({
 			url:"addInlibrary",
 			data:{
+				"category":category,
 				"goodsName":goodsName,
 				"goodsNum":goodsNum,
 				"area":Area,
@@ -105,8 +109,10 @@ $("#cancel").click(function(){
 	$("#addDetail").hide();
 	$("#GoodsName").val("");
 	$("#GoodsCount").val("1");
+	$("#category:first option:first").attr("selected",true).siblings("option").attr("selected",false);
 	$("#area:first option:first").attr("selected",true).siblings("option").attr("selected",false);		//重置select的值
 	$("#room:first option:first").attr("selected",true).siblings("option").attr("selected",false);
+	
 	isShowAdd = 0
 });
 

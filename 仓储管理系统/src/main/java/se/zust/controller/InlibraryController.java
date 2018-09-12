@@ -1,9 +1,5 @@
 package se.zust.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,11 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.bind.annotation.ResponseBody;
 import se.zust.entity.Inlibrary;
 import se.zust.service.GoodsService;
 import se.zust.service.InlibraryService;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -33,7 +32,8 @@ public class InlibraryController {
 
     @RequestMapping(value = "/addInlibrary",method = RequestMethod.POST)
 	@ResponseBody
-    public ResponseEntity<Inlibrary> add(@RequestParam(value = "goodsName",required = false) String goodsName,
+    public ResponseEntity<Inlibrary> add(@RequestParam(value = "category",required = false) String category,
+										 @RequestParam(value = "goodsName",required = false) String goodsName,
                                          @RequestParam(value = "goodsNum",required = false) Integer goodsNum,
                                          @RequestParam(value = "area",required = false) String area,
                                          @RequestParam(value = "room",required = false) String room,
@@ -49,7 +49,7 @@ public class InlibraryController {
         inlibrary.setIntime(sdf.format(date));
         inlibraryservice.addInlibrary(inlibrary);
         int pid = inlibraryservice.selectPid();
-        goodsService.addGoods(pid,goodsName,goodsNum,area,room);
+        goodsService.addGoods(pid,category,goodsName,goodsNum,area,room);
         return new ResponseEntity<Inlibrary>(inlibrary,HttpStatus.OK);
     }
 

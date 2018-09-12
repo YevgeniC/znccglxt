@@ -1,6 +1,7 @@
 ﻿var isShow = 0;				//查询条件显示
 var isShowDetail = 0;	//详情显示
 var goodsID;					//物品编号
+var goodsCategory;		//物品类型
 var goodsName;			//物品名称
 var Area;						//仓库号
 var room;						//房间号
@@ -40,6 +41,7 @@ var getData = function () {
 		dataType:"JSON",
 		data:{
 			"pid":goodsID,
+			"category":goodsCategory,
 			"pname":goodsName,
 			"area":Area,
 			"room":room,
@@ -141,6 +143,7 @@ var move = function () {
 			dataType: 'json',
 			data:{
 				"goodsID":$("#id").text(),
+				"category":$("#category").text(),
 				"pname":$("#name").text(),
 				"pnum":$("#num").val(),
 				"max":$("#num").attr("max"),
@@ -192,7 +195,7 @@ var out = function () {
 var getTableData = function (pid,type) {
 	$.ajax({
 		type:"post",
-		url:'selectDetail',
+		url:'selectGoods',
 		dataType: 'json',
 		data:{
 			"pid":pid
@@ -212,12 +215,15 @@ var getTableData = function (pid,type) {
 var stitchPopup = function (data,type){
 	var tablehtml = '<tr><th colspan="2" style="text-align: center;">—————— <span id="thid">'+theader[type]+'</span> ——————</th></tr>';
 	tablehtml = tablehtml + '<tr><td style="width: 240px;">物品编号：<span id="id">'+data.result[0].pid+'</span></td>';
-	tablehtml = tablehtml + '<td>物品名称：<span id="name">'+data.result[0].pname+'</span></td></tr>';
+	tablehtml = tablehtml + '<td>物品类型：<span id="category">'+data.result[0].category+'</span></td></tr>';
+	
 	if (2 == type || 1 == type) {
 		tablehtml = tablehtml + '<tr><td>物品数量：<input id="num" type="number" value="'+data.result[0].pnum+'" min="1" max="'+data.result[0].pnum+'"/></td>';
 	}else {
 		tablehtml = tablehtml + '<tr><td>物品数量：<span id="num">'+data.result[0].pnum+'</span></td>';
 	}
+	tablehtml = tablehtml + '<td>物品名称：<span id="name">'+data.result[0].pname+'</span></td></tr>';
+	tablehtml = tablehtml + '<tr><td>入库用户：<span id="person">'+data.result[0].inlibrary.inuser+'</span></td>';
 	tablehtml = tablehtml + '<td>物品位置：<span id="location">'+data.result[0].area+" - "+data.result[0].room+'</span></td></tr>';
 	if (2 == type) {
 		tablehtml = tablehtml + '<tr><td colspan="2">物品去向：<input id="address" style="width:300px;"/></td></tr>';
@@ -227,7 +233,6 @@ var stitchPopup = function (data,type){
 		'</select></td></tr>';
 	}else {
 		tablehtml = tablehtml + '<tr><td>入库时间：<span id="time">'+data.result[0].inlibrary.intime+'</span></td></tr>';
-		tablehtml = tablehtml + '<tr><td>入库用户：<span id="person">'+data.result[0].inlibrary.inuser+'</span></td></tr>';
 	}
 	$("#detail").children("table").html(tablehtml);
 	if (0 == type) {
@@ -241,6 +246,7 @@ var stitchPopup = function (data,type){
 
 //查询
 $("#search").click(function (){
+	goodsCategory = ("---" == $("#GoodsCategory").val()) ? "" : $("#GoodsCategory").val();
 	goodsID = $("#GoodsID").val().trim();
 	goodsName = $("#GoodsName").val().trim();
 	Area = $("#area").val();

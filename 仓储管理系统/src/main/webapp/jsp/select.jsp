@@ -14,6 +14,15 @@
 		<div id="head">
 			物品编号：<input id="GoodsID" type="text" />
 			物品名称：<input id="GoodsName" type="text" />
+			物品类别：
+			<select id="GoodsCategory" name="category" />
+				<option>---</option>
+				<option>食品饮品</option>
+				<option>生活用品</option>
+				<option>学习用品</option>
+				<option>建筑材料</option>
+				<option>其他</option>
+			</select>
 			<span id="moreterms">更多条件</span>
 			<img id="arrow" src="../picture/system/sousuomore.png"/>
 			<div id="search">查询</div>
@@ -33,6 +42,7 @@
 			</select>
 			入库时间：<input id="StartTime" type="date" />
 			至 <input id="EndTime" type="date" />
+			
 		</div>
 		<div id="middle">
 			<div id="mtable">
@@ -71,17 +81,20 @@
 				</th>
 				<tr>
 					<td>物品编号：<span id="id">1578948944</span></td>
-					<td>物品名称：<span id="name">奶酪</span></td>
+					<td>物品类型：<span id="category">生活用品</span></td>
+					
 				</tr>
 				<tr>
 					<td>物品数量：<span id="num">14</span></td>
+					<td>物品名称：<span id="name">奶酪</span></td>
+					
+				</tr>
+				<tr>
+					<td>入库用户：<span id="person">Mike</span></td>
 					<td>物品位置：<span id="address">A2 - 502</span></td>
 				</tr>
 				<tr>
 					<td>入库时间：<span id="time">2018-08-13 15:25:26</span></td>
-				</tr>
-				<tr>
-					<td>入库用户：<span id="person">Mike</span></td>
 				</tr>-->
 			</table>
 			<div  id="operation"></div>

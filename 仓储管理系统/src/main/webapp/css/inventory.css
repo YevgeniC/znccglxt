@@ -14,6 +14,15 @@ body{
 	z-index: -1;
 	background: rgba(0, 0, 0, 0.6);
 }
+#shandow{
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	display: block;
+	top: 60px;
+	z-index: 5;
+	background: #00000000;
+}
 #top{
 	position: fixed;
 	width: 100%;
@@ -24,6 +33,10 @@ body{
 #top input{
 	height: 19px;
 	margin: 17px 0 17px 25px;
+}
+#GoodsCategory{
+	height: 25px;
+	margin: 17px 0 17px 5px;
 }
 #search{
 	width: 150px;

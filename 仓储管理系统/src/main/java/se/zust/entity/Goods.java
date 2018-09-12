@@ -7,6 +7,7 @@ public class Goods {
     private int pnum;
     private String area;
     private String room;
+    private String category;
     private Inlibrary inlibrary;
 
     public int getPid() {
@@ -55,6 +56,14 @@ public class Goods {
 
     public void setRoom(String room) {
         this.room = room;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Inlibrary getInlibrary() {

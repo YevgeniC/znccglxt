@@ -44,9 +44,20 @@
 			</div>
 		</div>
 		<form method="POST" id="addInlibrary">
+		
 		<div id="addDetail">
-			货物名称：<input  id="GoodsName" name="GoodsName" type="text"/><br/><br/>
-			货物数量：<input  id="GoodsCount" name="GoodsCount" type="number" value="1" min="1"/><br/><br/>
+			——————— <span id="thid">入库详情</span> ———————<br/><br/>
+			物品类别：
+			<select id="category" name="category" />
+				<option>---</option>
+				<option>食品饮品</option>
+				<option>生活用品</option>
+				<option>学习用品</option>
+				<option>建筑材料</option>
+				<option>其他</option>
+			</select><br/><br/>
+			物品名称：<input  id="GoodsName" name="GoodsName" type="text"/><br/><br/>
+			物品数量：<input  id="GoodsCount" name="GoodsCount" type="number" value="1" min="1"/><br/><br/>
 			存放位置：
 			<select id="area" name="area">
 				<option>A1</option>

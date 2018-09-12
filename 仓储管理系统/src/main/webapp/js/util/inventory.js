@@ -1,5 +1,6 @@
 ﻿var search;					//搜索内容
 var goodsName;			//物品名称
+var goodsCategory;		//物品类型
 var pid;							//入库单编号
 var pageNo = 1;			//页码
 var pageSize = 10;		//页面显示记录条数
@@ -17,6 +18,7 @@ var getData = function () {
 		dataType:"JSON",
 		data:{
 			"search":search,
+			"category":goodsCategory,
 			"pageNo":pageNo,
 			"pageSize":pageSize
 		},
@@ -63,6 +65,7 @@ var stitchPage =function (data) {
 //查询
 $("#search").click(function (){
 	search = $("#GoodsName").val();
+	goodsCategory = ("---物品类别---" == $("#GoodsCategory").val()) ? "" : $("#GoodsCategory").val();
 	pageNo = 1;
 	getData();
 });

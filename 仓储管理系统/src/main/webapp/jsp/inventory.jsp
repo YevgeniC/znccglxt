@@ -10,8 +10,17 @@
     </head>
     <body>
     	<div class="shandow"></div>
+    	<div id="shandow"></div>
     	<div id="top">
 			<input id="GoodsName" type="text" placeholder="请输入物品名称"/>
+			<select id="GoodsCategory" name="category" />
+				<option>---物品类别---</option>
+				<option>食品饮品</option>
+				<option>生活用品</option>
+				<option>学习用品</option>
+				<option>建筑材料</option>
+				<option>其他</option>
+			</select>
 			<div id="search">查询</div>
 		</div>
 		<div id="middle">

@@ -118,7 +118,7 @@ table tr{
 #detail{
 	position: fixed;
 	z-index: 999;
-	top: 30%;
+	top: 27%;
 	left: 27%;
 	border: 1px solid #C2C2C2;
 	border-radius: 15px;

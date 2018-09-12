@@ -10,6 +10,7 @@
         <result column="pnum" property="pnum" jdbcType="VARCHAR"/>
         <result column="area" property="area" jdbcType="VARCHAR"/>
         <result column="room" property="room" jdbcType="VARCHAR"/>
+        <result column="category" property="category" jdbcType="VARCHAR"/>
         <association property="inlibrary" javaType="se.zust.entity.Inlibrary">
             <id column="pid" property="pid" jdbcType="INTEGER"/>
             <result column="in_date" property="intime" jdbcType="TIMESTAMP"/>
@@ -18,7 +19,7 @@
     </resultMap>
 
     <insert id="addGoods" parameterType="se.zust.entity.Goods">
-        insert into goods (inlibrary_id,pname,pnum,area,room) values (#{inLibraryID},#{pname},#{pnum},#{area},#{room})
+        insert into goods (inlibrary_id,category,pname,pnum,area,room) values (#{inLibraryID},#{category},#{pname},#{pnum},#{area},#{room})
     </insert>
 
     <delete id="deleteGoods" parameterType="se.zust.entity.Goods">
@@ -42,6 +43,9 @@
         <where>
             <if test="pid != null">
                 g.pid like CONCAT(CONCAT('%', #{pid,jdbcType=VARCHAR}), '%')
+            </if>
+            <if test="category != '' and category != null">
+                AND g.category = #{category,jdbcType=VARCHAR}
             </if>
             <if test="pname != '' and pname != null">
                 AND g.pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
@@ -70,6 +74,9 @@
             <if test="pid != null">
                 g.pid like CONCAT(CONCAT('%', #{pid,jdbcType=VARCHAR}), '%')
             </if>
+            <if test="category != '' and category != null">
+                AND g.category = #{category,jdbcType=VARCHAR}
+            </if>
             <if test="pname != '' and pname != null ">
                 AND g.pname LIKE "%"#{pname,jdbcType=VARCHAR}"%"
             </if>
@@ -96,6 +103,9 @@
             <if test="search != '' and search != null">
                 pname LIKE "%"#{search}"%"
             </if>
+            <if test="category != '' and category != null">
+                AND category = #{category,jdbcType=VARCHAR}
+            </if>
         </where>
         group by pname
         limit #{start},#{pageSize}
@@ -106,6 +116,9 @@
         <where>
             <if test="search != '' and search != null">
                 pname LIKE "%"#{search}"%"
+            </if>
+            <if test="category != '' and category != null">
+                AND category = #{category,jdbcType=VARCHAR}
             </if>
         </where>
     </select>
