@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-08-30 11:09:49
+Date: 2018-09-26 09:16:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,41 +26,42 @@ CREATE TABLE `goods` (
   `pnum` int(255) DEFAULT NULL,
   `area` varchar(255) DEFAULT NULL,
   `room` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1578948974 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('1578948904', '1151864949', '奶酪', '12', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948945', '1151864950', '奶酪', '14', 'A2', '102');
-INSERT INTO `goods` VALUES ('1578948946', '1151864950', '起司', '14', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948947', '1151864975', '蛤蛤', '15', 'A2', '156');
-INSERT INTO `goods` VALUES ('1578948948', '1151864989', '肥宅快乐水', '111', 'A2', '103');
-INSERT INTO `goods` VALUES ('1578948949', '1151864992', '肥宅快乐水', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948950', '1151865012', '肥宅快乐奶茶', '1123', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948951', '1151865013', '一颗赛艇', '1123', 'A2', '102');
-INSERT INTO `goods` VALUES ('1578948952', '1151865014', '二院视察', '50', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948953', '1151865015', '三个代表', '50', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948954', '1151865016', '四次起身', '5', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948955', '1151865017', '无可奉告', '50', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948956', '1151865018', '六月水柜', '50', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948957', '1151865019', '七因国服', '50', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948958', '1151865020', '八门外语', '165', 'A2', '102');
-INSERT INTO `goods` VALUES ('1578948959', '1151865021', '九十大寿', '561', 'A4', '205');
-INSERT INTO `goods` VALUES ('1578948960', '1151865022', '十全长者', '65', 'A3', '405');
-INSERT INTO `goods` VALUES ('1578948961', '1151865023', '张宝华', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948962', '1151865024', '董先生', '123', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948963', '1151865029', '野子', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948964', '1151865030', 'the', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948965', '1151865031', '百叶', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948966', '1151865032', '牛百叶', '16', 'A2', '102');
-INSERT INTO `goods` VALUES ('1578948967', '1151865032', '水', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948968', '1151865032', '1', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948969', '1151865033', '千张', '1', 'A1', '101');
-INSERT INTO `goods` VALUES ('1578948970', '1151864989', '肥宅快乐水', '12', 'A2', '103');
-INSERT INTO `goods` VALUES ('1578948971', '1151864989', '肥宅快乐水', '12', 'A2', '103');
-INSERT INTO `goods` VALUES ('1578948972', '1151865034', '农夫山泉', '81', 'A1', '101');
+INSERT INTO `goods` VALUES ('1578948904', '1151864949', '奶酪', '12', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948945', '1151864950', '奶酪', '14', 'A2', '102', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948946', '1151864950', '起司', '14', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948947', '1151864975', '蛤蛤', '15', 'A2', '156', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948948', '1151864989', '肥宅快乐水', '111', 'A2', '103', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948949', '1151864992', '肥宅快乐水', '1', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948950', '1151865012', '肥宅快乐奶茶', '1123', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948951', '1151865013', '一颗赛艇', '1123', 'A2', '102', null);
+INSERT INTO `goods` VALUES ('1578948952', '1151865014', '二院视察', '50', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948953', '1151865015', '三个代表', '50', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948954', '1151865016', '四次起身', '5', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948955', '1151865017', '无可奉告', '50', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948956', '1151865018', '六月水柜', '50', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948957', '1151865019', '七因国服', '50', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948958', '1151865020', '八门外语', '165', 'A2', '102', null);
+INSERT INTO `goods` VALUES ('1578948959', '1151865021', '九十大寿', '561', 'A4', '205', null);
+INSERT INTO `goods` VALUES ('1578948960', '1151865022', '十全长者', '65', 'A3', '405', null);
+INSERT INTO `goods` VALUES ('1578948961', '1151865023', '张宝华', '1', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948962', '1151865024', '董先生', '123', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948963', '1151865029', '野子', '1', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948964', '1151865030', 'the', '1', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948965', '1151865031', '百叶', '1', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948966', '1151865032', '牛百叶', '16', 'A2', '102', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948967', '1151865032', '水', '1', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948968', '1151865032', '1', '1', 'A1', '101', null);
+INSERT INTO `goods` VALUES ('1578948969', '1151865033', '千张', '1', 'A1', '101', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948970', '1151864989', '肥宅快乐水', '12', 'A2', '103', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948971', '1151864989', '肥宅快乐水', '12', 'A2', '103', '食品饮品');
+INSERT INTO `goods` VALUES ('1578948972', '1151865034', '农夫山泉', '81', 'A1', '101', '食品饮品');
 
 -- ----------------------------
 -- Table structure for inlibrary
